@@ -1,0 +1,701 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.clear-fix{
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+/*css samo za naprave, ki so ožje od 320px*/
+header {
+    box-sizing: border-box;
+}
+.site-title {
+    float: left;
+    height: 62px;
+    line-height: 62px;
+    margin-left: 12px;
+}
+.site-title a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(226, 35, 35);
+    font-size: 22px;
+}
+.site-spicy {
+    font-weight: 700;
+}
+.burger-menu {
+    float: right;
+    height: 62px;
+    line-height: 62px;
+    width: 30px;
+    text-align: center;
+    margin-right: 12px;
+}
+.fa-custom-icon {
+    color: rgb(226, 35, 35);
+    vertical-align: middle;
+}
+nav {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.6s ease;
+    transition: max-height 0.6s ease;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    list-style: none;
+}
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: rgb(226, 35, 35);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 12px;
+}
+.showing {
+    max-height: 20em;
+    border-top: 1px solid rgb(226, 35, 35);
+}
+.fa-custom-list {
+    margin-right: 10px;
+    /*color: rgb(226, 35, 35);*/
+}
+.site-wrapper {}
+.site-welcome {
+    height: calc(100vh - 62px);
+    background: url("../images/predstavitvena-1.jpg") no-repeat;
+    background-size: cover;
+    text-align: center;
+    vertical-align: middle;
+}
+.site-welcome h1 {
+    max-width: 280px;
+    margin: 0 auto;
+    padding-top: 110px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-size: 28px;
+}
+.site-welcome a {
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+.fa-custom-welcome {
+    color: white;
+    padding-top: 90px;
+}
+.heading-spicy {
+    color: rgb(34, 204, 241);
+}
+.site-about {}
+.site-about-inner {
+    max-width: 280px;
+    margin: 0 auto;
+}
+.site-about-inner h2 {
+    padding: 15px 0px;
+    margin: 0;
+    text-align: center;
+}
+.site-about-text {
+    display: none;
+}
+.site-about-hr {
+    display: none;
+}
+.fa-custom-about {
+    color: rgb(226, 35, 35);
+    position: relative;
+    top: 15px;
+    left: 126.28px;
+}
+.site-about-p {
+    text-align: center;
+    padding: 15px 15px;
+    font-style: italic;
+}
+footer {
+    background: rgb(226, 35, 35);
+    height: 150px;
+}
+.footer-contact {
+    max-width: 150px;
+    margin: 0 auto;
+    line-height: 150px;
+}
+.footer-contact ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.footer-contact ul li {
+    list-style: none;
+    display: inline-block;
+}
+.footer-contact ul li+li {
+    margin-left: 10px;
+}
+.footer-contact ul li a {
+    color: white;
+}
+/*css za naprave večje od 321px in manjše od 480px*/
+@media screen and (min-width: 321px) and (max-width: 480px){
+
+    .site-about{
+        margin: 38px 0 38px 0;
+    }
+    .site-about-inner h2{
+        font-size: 27px;
+    }
+    .site-about-p{
+        font-size: 18px;
+    }
+    footer{
+        height: 200px;
+    }
+    .footer-contact{
+        line-height: 200px;
+    }
+
+}
+/*css za naprave, ki so večje od 481px ter manjše od 779px*/
+@media screen and (min-width: 481px) and (max-width: 779px){
+
+
+    .site-title{
+        height: 82px;
+        line-height: 82px;
+        margin-left: 20px;
+    }
+    .site-title a{
+        font-size: 28px;
+    }
+    .site-title a:hover{
+        color: black;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+    .burger-menu {
+        height: 82px;
+        line-height: 82px;
+        margin-right: 20px;
+
+    }
+    nav ul li {
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+    }
+    nav ul li a {
+        vertical-align: middle;
+        font-size: 17px;
+        padding: 0;
+
+    }
+    .showing {
+        max-height: 300px;
+    }
+    .site-welcome{
+        height: 300px;
+    }
+    .site-welcome h1{
+        max-width: 480px;
+        padding-top: 115px;
+    }
+    .site-welcome a{
+        display: none;
+    }
+    .fa-custom-welcome{
+        display: none;
+    }
+    .site-about{
+        margin: 38px 0 38px 0;
+    }
+    .site-about-inner{
+        max-width: 600px;
+    }
+    .site-about-inner h2{
+        font-size: 30px;
+        margin: 0 auto;
+        max-width: 500px;
+        font-weight: 400;
+        border-bottom: 3px solid red;
+    }
+    .site-about-hr{
+        display: block;
+        border: 0;
+        height: 3px;
+        width: 35px;
+        background: rgb(226, 35, 35);
+    }
+    .site-about-inner i{
+        display: none;
+    }
+    .fa-custom-about{
+        display: none;
+    }
+    .site-about-p{
+        color: rgb(0, 0, 0);
+        margin: 0;
+        font-size: 22px;
+    }
+    .site-about-chilis, .site-about-sorts, .site-about-scoville{
+        max-width: 600px;
+        margin: 15px auto 0 auto;
+        padding: 25px 25px;
+
+    }
+    .site-about-text{
+        display: block;
+        text-align: center;
+        line-height: 23px;
+        font-size: 17px;
+        color: rgb(103, 100, 100);
+    }
+    footer{
+        height: 200px;
+    }
+    .footer-contact{
+        line-height: 200px;
+    }
+    .footer-contact ul li a:hover{
+        color: black;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+
+}
+/*css za naprave, ki so večje od 780px ter manjše od 960px*/
+@media screen and (min-width: 780px) and (max-width: 960px){
+
+    .site-title{
+        float: none;
+        text-align: center;
+        height: 82px;
+        line-height: 82px;
+    }
+    .site-title a{
+        font-size: 28px;
+    }
+    .site-title a:hover{
+        color: black;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+    .burger-menu {
+        display: none;
+    }
+    .fa-custom-icon {
+        display: none;
+    }
+    nav{
+        max-height: 50px;
+        border-top: 1px solid rgb(226, 35, 35);
+    }
+    nav ul {
+        max-width: 745px;
+        margin: 0 auto;
+        height: 42px;
+    }
+    nav ul li {
+        display: inline-block;
+        text-align: center;
+    }
+    nav ul li a {
+        line-height: 42px;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 16px;
+        padding: 0 5px;
+    }
+    nav ul li a:hover{
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        color: black;
+
+    }
+    .showing {
+        display: none;
+    }
+    .site-welcome{
+        height: 450px;
+        background: url("../images/predstavitvena-2.jpg") no-repeat;
+    }
+    .site-welcome h1{
+        position: relative;
+        top: 165px;
+        max-width: 520px;
+        padding: 15px 10px;
+        font-size: 36px;
+        border: 5px solid white;
+    }
+    .site-welcome a{
+        display: none;
+    }
+    .fa-custom-welcome{
+        display: none;
+    }
+    .site-about{
+        padding: 38px 0 38px 0;
+    }
+    .site-about-inner{
+        max-width: 600px;
+    }
+    .site-about-inner h2{
+        font-size: 28px;
+        margin: 0 auto;
+        max-width: 600px;
+        border-bottom: 3px solid rgb(226, 35, 35);
+        font-weight: 400;
+    }
+    .site-about-hr{
+        display: block;
+        border: 0;
+        height: 3px;
+        width: 35px;
+        background: rgb(226, 35, 35);
+    }
+    .site-about-inner i{
+        display: none;
+    }
+    .fa-custom-about{
+        display: none;
+    }
+    .site-about-p{
+        color: rgb(0, 0, 0);
+        margin: 0;
+        font-size: 21px;
+    }
+    .site-about-chilis, .site-about-sorts, .site-about-scoville{
+        max-width: 600px;
+        margin: 15px auto 0 auto;
+        padding: 25px 25px;
+
+    }
+    .site-about-text{
+        display: block;
+        text-align: center;
+        line-height: 23px;
+        font-size: 17px;
+        color: rgb(103, 100, 100);
+    }
+    footer{
+        height: 200px;
+    }
+    .footer-contact{
+        max-width: 200px;
+        margin: 0 auto;
+        line-height: 200px;
+    }
+    .footer-contact ul li+li{
+        margin-left: 20px;
+    }
+    .footer-contact ul li a:hover{
+        color: black;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+
+}
+/*css za naprave, ki so večje od 961px ter manjše od 1140px*/
+@media screen and (min-width: 961px) and (max-width: 1140px){
+
+    .site-title{
+        float: none;
+        text-align: center;
+        height: 82px;
+        line-height: 82px;
+    }
+    .site-title a{
+        font-size: 28px;
+    }
+    .site-title a:hover{
+        color: black;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+    .burger-menu {
+        display: none;
+    }
+    .fa-custom-icon {
+        display: none;
+    }
+    nav{
+        max-height: 82px;
+        border-top: 1px solid rgb(226, 35, 35);
+    }
+    nav ul {
+        max-width: 785px;
+        margin: 0 auto;
+        height: 42px;
+    }
+    nav ul li {
+        display: inline-block;
+        text-align: center;
+    }
+    nav ul li a {
+        line-height: 42px;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 17px;
+        padding: 0 5px;
+    }
+    nav ul li a:hover{
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        color: black;
+    }
+    .showing {
+        display: none;
+    }
+    .site-welcome{
+        height: 550px;
+        background: url("../images/predstavitvena-2.jpg") no-repeat;
+    }
+    .site-welcome h1{
+        position: relative;
+        top: 200px;
+        max-width: 600px;
+        padding: 15px 10px;
+        font-size: 37px;
+        border: 5px solid white;
+    }
+    .site-welcome a{
+        display: none;
+    }
+    .fa-custom-welcome{
+        display: none;
+    }
+    .site-about{
+        padding: 38px 0 38px 0;
+    }
+    .site-about-inner{
+        max-width: 720px;
+    }
+    .site-about-inner h2{
+        font-size: 28px;
+        margin: 0 auto;
+        max-width: 700px;
+        border-bottom: 3px solid rgb(226, 35, 35);
+        font-weight: 400;
+    }
+    .site-about-hr{
+        display: block;
+        border: 0;
+        height: 3px;
+        width: 35px;
+        background: rgb(226, 35, 35);
+    }
+    .site-about-inner i{
+        display: none;
+    }
+    .fa-custom-about{
+        display: none;
+    }
+    .site-about-p{
+        color: rgb(0, 0, 0);
+        margin: 0;
+        font-size: 23px;
+    }
+    .site-about-chilis, .site-about-sorts, .site-about-scoville{
+        max-width: 720px;
+        margin: 15px auto 0 auto;
+        padding: 25px 25px;
+
+    }
+    .site-about-text{
+        display: block;
+        text-align: center;
+        line-height: 23px;
+        font-size: 17px;
+        color: rgb(103, 100, 100);
+    }
+    footer{
+        height: 300px;
+    }
+    .footer-contact{
+        max-width: 250px;
+        margin: 0 auto;
+        line-height: 300px;
+    }
+    .footer-contact ul li+li{
+        margin-left: 25px;
+    }
+    .footer-contact ul li a{
+        font-size: 21px;
+    }
+    .footer-contact ul li a:hover{
+        color: black;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+}
+
+/*css za naprave, ki so večje od 1141px*/
+@media screen and (min-width: 1141px){
+
+    header{
+        min-height: 82px;
+    }
+    header > .clear-fix{
+        display: none;
+    }
+    .site-title{
+        text-align: center;
+        height: 82px;
+        line-height: 82px;
+        float: left;
+    }
+    .site-title a{
+        font-size: 26px;
+    }
+    .site-title a:hover{
+        color: black;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+    .burger-menu {
+        display: none;
+    }
+    .fa-custom-icon {
+        display: none;
+    }
+    nav{
+        max-height: 82px;
+        float: right;
+        height: 82px;
+    }
+    nav ul {
+        max-width: 830px;
+        margin: 0 auto;
+        height: 82px;
+        box-sizing: border-box;
+    }
+    nav ul li {
+        float: left;
+        height: 82px;
+        text-align: center;
+        line-height: 82px;
+    }
+    nav ul li a {
+        display: inline-block;
+        font-size: 16px;
+        padding: 0 7px;
+    }
+    nav ul li:hover, nav ul li a:hover{
+        color: black;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    .showing {
+        display: none;
+    }
+    .site-welcome{
+        height: 650px;
+        background: url("../images/predstavitvena-2.jpg") no-repeat;
+    }
+    .site-welcome h1{
+        position: relative;
+        top: 250px;
+        max-width: 600px;
+        padding: 15px 10px;
+        font-size: 38px;
+        border: 5px solid white;
+    }
+    .site-welcome a{
+        display: none;
+    }
+    .fa-custom-welcome{
+        display: none;
+    }
+    .site-about{
+        padding: 38px 0 38px 0;
+    }
+    .site-about-inner{
+        max-width: 850px;
+    }
+    .site-about-inner h2{
+        font-size: 30px;
+        border-bottom: 3px solid red;
+        font-weight: 400;
+    }
+    .site-about-hr{
+        display: block;
+        border: 0;
+        height: 3px;
+        width: 35px;
+        margin: 30px auto;
+        background: red;
+    }
+    .site-about-inner i{
+        display: none;
+    }
+    .fa-custom-about{
+        display: none;
+    }
+    .site-about-p{
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 15px 15px;
+        margin: 0;
+        font-size: 24px;
+    }
+    .site-about-chilis, .site-about-sorts, .site-about-scoville{
+        max-width: 750px;
+        margin: 15px auto 0 auto;
+        padding: 25px 25px;
+
+    }
+    .site-about-text{
+        display: block;
+        text-align: center;
+        line-height: 23px;
+        font-size: 18px;
+        color: rgb(103, 100, 100);
+    }
+    footer{
+        background: rgb(226, 35, 35);
+        height: 300px;
+    }
+    .footer-contact{
+        max-width: 250px;
+        margin: 0 auto;
+        line-height: 300px;
+    }
+    .footer-contact ul{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .footer-contact ul li{
+        list-style: none;
+        display: inline-block;
+    }
+    .footer-contact ul li+li{
+        margin-left: 25px;
+    }
+    .footer-contact ul li a{
+        color: white;
+        font-size: 22px;
+    }
+    .footer-contact ul li a:hover{
+        color: black;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+}
