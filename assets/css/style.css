@@ -1,5 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
 body{
-    margin: 0;
+    margin: 0 0 150px;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -12,6 +19,7 @@ body{
     clear: both;
 }
 /*css samo za naprave, ki so ožje od 320px*/
+/*css za domačo stran index.php*/
 header {
     box-sizing: border-box;
 }
@@ -31,6 +39,7 @@ header {
     font-weight: 700;
 }
 .burger-menu {
+    cursor: pointer;
     float: right;
     height: 62px;
     line-height: 62px;
@@ -45,8 +54,8 @@ header {
 nav {
     max-height: 0;
     overflow: hidden;
-    -webkit-transition: max-height 0.6s ease;
-    transition: max-height 0.6s ease;
+    -webkit-transition: max-height 0.8s ease-in-out;
+    transition: max-height 0.8s ease-in-out;
 }
 nav ul {
     margin: 0;
@@ -64,7 +73,7 @@ nav ul li a {
     padding: 10px 12px;
 }
 .showing {
-    max-height: 20em;
+    max-height: 300px;
     border-top: 1px solid rgb(226, 35, 35);
 }
 .fa-custom-list {
@@ -126,8 +135,12 @@ nav ul li a {
     font-style: italic;
 }
 footer {
-    background: rgb(226, 35, 35);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgb(226, 35, 35), rgb(162, 77, 214));
     height: 150px;
+    width: 100%;
 }
 .footer-contact {
     max-width: 150px;
@@ -149,9 +162,101 @@ footer {
 .footer-contact ul li a {
     color: white;
 }
+/*konec cssja za domačo index.php stran*/
+
+/*css za registracijo uporabnika*/
+.register-user{
+    border-top: 1px solid rgb(226, 35, 35);
+}
+.register-user > h2{
+    text-align: center;
+    color: rgb(226, 35, 35);
+}
+form .register-form{
+    padding: 0;
+    margin: 0;
+}
+form .register-form li{
+    list-style: none;
+    padding: 5px 0;
+    text-align: center;
+}
+form .register-form li input{
+    display: block;
+    width: 95%;
+    margin: 3px auto 0 auto;
+    padding: 6px 8px;
+    border: 1px solid rgb(226, 35, 35);
+    border-radius: 3px;
+}
+form .register-form li input:focus, input:active{
+    outline-color: rgb(5, 23, 255);
+}
+form .register-form li .register-btn{
+    cursor: pointer;
+    margin: 10px auto 30px auto;
+    padding: 15px 0;
+    background: linear-gradient(45deg, rgb(236, 77, 77), rgb(226, 35, 35), rgb(236, 77, 77));
+    color: white;
+    text-transform: uppercase;
+}
+form .register-form li .register-btn:hover, .register-btn:active, .register-btn:focus{
+    background: white;
+    color: rgb(226, 35, 35);
+    outline: none;
+}
+/*konec css za registracijo uporabnika*/
+
+/*začetek cssja za seznam čilijev*/
+.chilis-container{
+    width: 100%;
+    border-top: 1px solid rgb(226, 35, 35);
+}
+.chilis-container .chilis-title{
+    text-align: center;
+}
+.chilis-container .chilis-title h2{
+    color: rgb(226, 35, 35);
+}
+.chilis-container .chili-list{
+    width: 100%;
+    position: relative;
+    height: 205px;
+}
+.chilis-container .chili-list a{
+    display: inline-block;
+    text-decoration: none;
+
+}
+.chilis-container .chili-list a img{
+    width: 100%;
+    height: 205px;
+    object-fit: cover;
+}
+.chilis-container .chili-list a .chili-list-title{
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 10px;
+    margin: 0;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.6);
+}
+/*konec cssja za seznam čilijev*/
+
 /*css za naprave večje od 321px in manjše od 480px*/
 @media screen and (min-width: 321px) and (max-width: 480px){
 
+    /*css za domačo index.php stran*/
+    body{
+        margin: 0 0 200px;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
     .site-about{
         margin: 38px 0 38px 0;
     }
@@ -161,18 +266,53 @@ footer {
     .site-about-p{
         font-size: 18px;
     }
-    footer{
+    footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
         height: 200px;
+        width: 100%;
     }
     .footer-contact{
         line-height: 200px;
     }
+    /*konec cssja za domačo index.php stran*/
 
+    /*css za registracijo uporabnika*/
+    .register-user > h2{
+        text-align: center;
+        text-transform: uppercase;
+    }
+    form .register-form li input{
+    padding: 9px 11px;
+    }
+    /*konec cssja za registracijo uporabnika*/
+
+    /*začetek cssja za seznam čilijev*/
+    .chilis-container .chili-list{
+        height: 260px;
+    }
+
+    .chilis-container .chili-list a img{
+        height: 260px;
+    }
+    .chilis-container .chili-list a .chili-list-title{
+        padding: 7px 12px;
+        font-size: 17px;
+        margin: 0;
+    }
+    /*konec cssja za seznam čilijev*/
 }
 /*css za naprave, ki so večje od 481px ter manjše od 779px*/
 @media screen and (min-width: 481px) and (max-width: 779px){
 
-
+    /*css za domačo index.php stran*/
+    body{
+        margin: 0 0 200px;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
     .site-title{
         height: 82px;
         line-height: 82px;
@@ -204,7 +344,7 @@ footer {
 
     }
     .showing {
-        max-height: 300px;
+        max-height: 350px;
     }
     .site-welcome{
         height: 300px;
@@ -230,7 +370,7 @@ footer {
         margin: 0 auto;
         max-width: 500px;
         font-weight: 400;
-        border-bottom: 3px solid red;
+        border-bottom: 3px solid rgb(226, 35, 35);
     }
     .site-about-hr{
         display: block;
@@ -263,8 +403,12 @@ footer {
         font-size: 17px;
         color: rgb(103, 100, 100);
     }
-    footer{
+    footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
         height: 200px;
+        width: 100%;
     }
     .footer-contact{
         line-height: 200px;
@@ -274,20 +418,65 @@ footer {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
     }
+    /*konec cssja za domačo index.php stran*/
 
+    /*css za registracijo uporabnika*/
+    .register-user > h2{
+        text-transform: uppercase;
+    }
+    form .register-form li{
+        padding: 10px 0;
+    }
+    form .register-form li input{
+        max-width: 550px;
+    }
+    /*konec css za registracijo uporabnika*/
+
+    /*začetek cssja za seznam čilijev*/
+    .chilis-container .chili-list{
+        float: left;
+        width: 50%;
+        height: 260px;
+    }
+    .chilis-container .chilis-title h2{
+        text-transform: uppercase;
+    }
+    .chilis-container .chili-list a img{
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+    .chilis-container .chili-list a .chili-list-title{
+        width: 100%;
+        text-align: center;
+        padding: 10px 10px;
+        font-size: 17px;
+        margin: 0;
+    }
+    /*konec cssja za seznam čilijev*/
 
 }
 /*css za naprave, ki so večje od 780px ter manjše od 960px*/
 @media screen and (min-width: 780px) and (max-width: 960px){
 
+    /*css za domačo index.php stran*/
+    body{
+        margin: 0 0 200px;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
     .site-title{
         float: none;
         text-align: center;
         height: 82px;
+        margin-left: 0;
         line-height: 82px;
+        background: rgb(226, 35, 35);
     }
     .site-title a{
         font-size: 28px;
+        color: white;
     }
     .site-title a:hover{
         color: black;
@@ -302,7 +491,7 @@ footer {
     }
     nav{
         max-height: 50px;
-        border-top: 1px solid rgb(226, 35, 35);
+        border-top: none;
     }
     nav ul {
         max-width: 745px;
@@ -391,8 +580,12 @@ footer {
         font-size: 17px;
         color: rgb(103, 100, 100);
     }
-    footer{
+    footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
         height: 200px;
+        width: 100%;
     }
     .footer-contact{
         max-width: 200px;
@@ -407,20 +600,78 @@ footer {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
     }
+    /*konec cssja za domačo index.php stran*/
 
+    /*css za registracijo uporabnika*/
+    .register-user > h2{
+        margin-top: 50px;
+        text-transform: uppercase;
+    }
+    form .register-form{
+        margin: 0 auto;
+        width: 600px;
+    }
+    form .register-form li input{
+        margin: 0;
+        width: 600px;
+    }
+    /*konec css za registracijo uporabnika*/
 
+    /*začetek cssja za seznam čilijev*/
+    .chilis-container .chilis-title h2{
+        text-transform: uppercase;
+    }
+    .chilis-container .chili-list{
+        float: left;
+        width: 33.33%;
+        height: 280px;
+    }
+    .chilis-container .chili-list a img{
+        height: 280px;
+    }
+    .chilis-container .chili-list a .chili-list-title{
+        display: none;
+    }
+    .chilis-container .chili-list a:hover .chili-list-title{
+        display: inline-block;
+        position: absolute;
+        font-size: 17px;
+        text-align: center;
+        line-height: 280px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: rgba(0, 0, 0, 0.6);
+    }
+    /*konec cssja za seznam čilijev*/
 }
 /*css za naprave, ki so večje od 961px ter manjše od 1140px*/
 @media screen and (min-width: 961px) and (max-width: 1140px){
 
+    /*začetek cssja za domači index.php stran*/
+    body{
+        margin: 0 0 300px;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
     .site-title{
         float: none;
         text-align: center;
         height: 82px;
         line-height: 82px;
+        margin-left: 0;
+        background: rgb(226, 35, 35);
     }
     .site-title a{
         font-size: 28px;
+        color: white;
     }
     .site-title a:hover{
         color: black;
@@ -523,13 +774,17 @@ footer {
         font-size: 17px;
         color: rgb(103, 100, 100);
     }
-    footer{
-        height: 300px;
+    footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 200px;
+        width: 100%;
     }
     .footer-contact{
         max-width: 250px;
         margin: 0 auto;
-        line-height: 300px;
+        line-height: 200px;
     }
     .footer-contact ul li+li{
         margin-left: 25px;
@@ -542,14 +797,75 @@ footer {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
     }
+    /*konec cssja za domačo index.php stran*/
+
+    /*css za registracijo uporabnika*/
+    .register-user h2{
+        margin-top: 50px;
+    }
+    form .register-form{
+        margin: 0 auto;
+        width: 600px;
+    }
+    form .register-form li{
+        text-align: left;
+    }
+    form .register-form li input{
+        font-size: 17px;
+        margin: 0;
+        width: 600px;
+        padding: 10px 25px;
+    }
+    /*konec css za registracijo uporabnika*/
+
+    /*začetek cssja za seznam čilijev*/
+    .chilis-container .chilis-title h2{
+        text-transform: uppercase;
+    }
+    .chilis-container .chili-list{
+        float: left;
+        width: 33.33%;
+        height: 280px;
+    }
+    .chilis-container .chili-list a img{
+        height: 280px;
+    }
+    .chilis-container .chili-list a .chili-list-title{
+        display: none;
+    }
+    .chilis-container .chili-list a:hover .chili-list-title{
+        display: inline-block;
+        position: absolute;
+        font-size: 17px;
+        text-align: center;
+        line-height: 280px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: rgba(0, 0, 0, 0.6);
+    }
+    /*konec cssja za seznam čilijev*/
 
 }
 
 /*css za naprave, ki so večje od 1141px*/
 @media screen and (min-width: 1141px){
-
+    /*css za domači index.php stran*/
+    body{
+        margin: 0 0 300px;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
     header{
         min-height: 82px;
+        border-bottom: 1px solid rgb(226, 35, 35);
     }
     header > .clear-fix{
         display: none;
@@ -630,7 +946,7 @@ footer {
     }
     .site-about-inner h2{
         font-size: 30px;
-        border-bottom: 3px solid red;
+        border-bottom: 3px solid rgb(226, 35, 35);
         font-weight: 400;
     }
     .site-about-hr{
@@ -639,7 +955,7 @@ footer {
         height: 3px;
         width: 35px;
         margin: 30px auto;
-        background: red;
+        background: rgb(226, 35, 35);
     }
     .site-about-inner i{
         display: none;
@@ -667,14 +983,17 @@ footer {
         font-size: 18px;
         color: rgb(103, 100, 100);
     }
-    footer{
-        background: rgb(226, 35, 35);
-        height: 300px;
+    footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 200px;
+        width: 100%;
     }
     .footer-contact{
         max-width: 250px;
         margin: 0 auto;
-        line-height: 300px;
+        line-height: 200px;
     }
     .footer-contact ul{
         margin: 0;
@@ -697,5 +1016,65 @@ footer {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
     }
+    /*konec cssja za domačo stran*/
 
+    /*css za registracijo uporabnika*/
+    .register-user h2{
+        margin-top: 50px;
+    }
+    form .register-form{
+        margin: 0 auto;
+        width: 600px;
+    }
+    form .register-form li{
+        text-align: left;
+    }
+    form .register-form li input{
+        font-size: 17px;
+        margin: 0;
+        width: 600px;
+        padding: 10px 25px;
+    }
+    /*konec css za registracijo uporabnika*/
+
+    /*začetek cssja za seznam čilijev*/
+    .chilis-container{
+        border: none;
+        margin: 0 auto;
+        max-width: 1100px;
+    }
+    .chilis-container .chilis-title h2{
+        text-transform: uppercase;
+        margin: 35px 0 35px 0;
+    }
+    .chilis-container .chili-list{
+        float: left;
+        width: 24%;
+        height: 280px;
+        margin: 0 5px;
+    }
+    .chilis-container .chili-list a img{
+        height: 280px;
+    }
+    .chilis-container .chili-list a .chili-list-title{
+        display: none;
+    }
+    .chilis-container .chili-list a:hover .chili-list-title{
+        display: inline-block;
+        position: absolute;
+        font-size: 17px;
+        text-align: center;
+        line-height: 280px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: rgba(0, 0, 0, 0.6);
+    }
+    /*konec cssja za seznam čilijev*/
 }
