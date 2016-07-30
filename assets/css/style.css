@@ -8,7 +8,6 @@ html {
 body{
     margin: 0 0 150px;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 .clear-fix{
@@ -73,7 +72,7 @@ nav ul li a {
     padding: 10px 12px;
 }
 .showing {
-    max-height: 300px;
+    max-height: 400px;
     border-top: 1px solid rgb(226, 35, 35);
 }
 .fa-custom-list {
@@ -119,6 +118,7 @@ nav ul li a {
 }
 .site-about-text {
     display: none;
+
 }
 .site-about-hr {
     display: none;
@@ -161,6 +161,10 @@ footer {
 }
 .footer-contact ul li a {
     color: white;
+}
+.footer-contact ul li a:active{
+    color: black;
+    transition: color 0.4s ease;
 }
 /*konec cssja za domačo index.php stran*/
 
@@ -212,11 +216,31 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     width: 100%;
     border-top: 1px solid rgb(226, 35, 35);
 }
+.chilis-container .chilis-title h2{
+    font-size: 22px;
+    color: rgb(226, 35, 35);
+}
 .chilis-container .chilis-title{
+    position: relative;
     text-align: center;
 }
-.chilis-container .chilis-title h2{
+.chilis-container .chilis-title a{
+    display: inline-block;
+    line-height: 29px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    text-decoration: none;
     color: rgb(226, 35, 35);
+    font-size: 17px;
+}
+.chilis-container .chilis-title a:hover{
+    color: black;
+    transition: color 0.4s;
+}
+.chilis-container .chilis-title a .add-new{
+    display: none;
+    margin-left: 3px;
 }
 .chilis-container .chili-list{
     width: 100%;
@@ -246,6 +270,124 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     background: rgba(0, 0, 0, 0.6);
 }
 /*konec cssja za seznam čilijev*/
+
+/*začetek cssja za posamezen čili*/
+.chili-container{
+    border-top: 1px solid rgb(226, 35, 35);
+    width: 100%;
+}
+.chili-container .chili-container-inner{
+    width: 100%;
+    margin: 25px 0;
+    padding-bottom: 25px;
+}
+.chili-container .chili-container-inner .chili-name{
+    text-align: center;
+    padding: 10px 0;
+}
+.chili-container .chili-container-inner .chili-name h2{
+    text-transform: uppercase;
+    margin: 0;
+    color: rgb(226, 35, 35);
+}
+.chili-container .chili-container-inner .chili-hr{
+    border: 0;
+    height: 5px;
+    width: 30px;
+    background: rgb(226, 35, 35);
+    margin-bottom: 25px;
+}
+.chili-container .chili-container-inner .chili-image{
+    width: 100%;
+    height: 250px;
+}
+.chili-container .chili-container-inner .chili-image img{
+    width: 100%;
+    object-fit: cover;
+    height: 250px;
+}
+.chili-container .chili-container-inner .chili-details {
+    width: 90%;
+    margin: 0 auto;
+}
+.chili-container .chili-container-inner .chili-details .chili-headings{
+    margin: 20px 0 0 0;
+    color: rgb(226, 35, 35);
+}
+.chili-container .chili-container-inner .chili-details .chili-paragraphs{
+    margin-top: 0;
+    padding: 0 3px;
+    text-align: justify;
+}
+.chili-container .chili-container-inner .chili-hr:nth-of-type(2),
+.chili-container .chili-container-inner .chili-hr:nth-of-type(3){
+    margin: 15px 0;
+    width: 100%;
+    height: 1px;
+}
+.chili-container .chili-container-inner .chili-comment-container{
+    width: 100%;
+}
+.chili-container .chili-container-inner .chili-comment-container form{
+    width: 90%;
+    margin: 10px auto 0 auto;
+}
+.chili-container .chili-container-inner .chili-comment-container label{
+    text-transform: uppercase;
+    color: rgb(226, 35, 35);
+}
+.chili-container .chili-container-inner .chili-comment-container textarea{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 60px;
+    margin: 6px 0;
+    border: 1px solid rgb(226, 35, 35);
+    border-radius: 2px;
+}
+textarea:focus, textarea:active, textarea:hover{
+    outline-color: rgb(5, 23, 255);
+    background: rgb(240, 240, 240);
+    transition: all 0.3s;
+}
+.chili-container .chili-container-inner .chili-comment-container .comment-button{
+    border: 1px solid rgb(226, 35, 35);
+    border-radius: 3px;
+    color: white;
+    background: rgb(226, 35, 35);
+    text-transform: uppercase;
+    width: 100%;
+    height:25px;
+    cursor: pointer;
+}
+.chili-container .chili-container-inner .chili-comment-container .comment-button:focus,
+.chili-container .chili-container-inner .chili-comment-container .comment-button:active,
+.chili-container .chili-container-inner .chili-comment-container .comment-button:hover{
+    background: white;
+    color: rgb(226, 35, 35);
+    outline: none;
+    transition: all 0.5s;
+}
+.chili-container .chili-container-inner .chili-comments{
+    width: 100%;
+}
+.chili-container .chili-container-inner .chili-comments .user-comment{
+    width: 90%;
+    margin: 0 auto;
+}
+.chili-container .chili-container-inner .chili-comments .user-comment span{
+    display: inline-block;
+    margin-right: 5px;
+    color: rgb(226, 35, 35);
+}
+.chili-container .chili-container-inner .chili-comments .user-comment .user-name{
+    font-weight: 700;
+
+}
+.chili-container .chili-container-inner .chili-comments .user-comment .comment-date{
+    font-style: italic;
+}
+/*konec cssja za posamezen čili*/
 
 /*css za naprave večje od 321px in manjše od 480px*/
 @media screen and (min-width: 321px) and (max-width: 480px){
@@ -292,6 +434,30 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     .chilis-container .chili-list{
         height: 260px;
     }
+    .chilis-container .chilis-title{
+        position: relative;
+        text-align: center;
+    }
+    .chilis-container .chilis-title h2{
+        font-size: 22px;
+    }
+    .chilis-container .chilis-title a{
+        display: inline-block;
+        line-height: 29px;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        text-decoration: none;
+        color: rgb(226, 35, 35);
+        font-size: 16px;
+    }
+    .chilis-container .chilis-title a:hover{
+        color: black;
+        transition: color 0.4s;
+    }
+    .chilis-container .chilis-title a .add-new{
+        display: none;
+    }
 
     .chilis-container .chili-list a img{
         height: 260px;
@@ -302,6 +468,39 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
         margin: 0;
     }
     /*konec cssja za seznam čilijev*/
+
+    /*začetek cssja za posamezen čili*/
+    .chili-container .chili-container-inner .chili-image{
+        height: 260px;
+    }
+    .chili-container .chili-container-inner .chili-image img{
+        height: 260px;
+    }
+    .chili-container .chili-container-inner .chili-details {
+        width: 90%;
+        margin: 20px auto 0 auto;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-headings{
+        margin: 20px 0 0 0;
+        padding: 3px 0 0 3px;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-headings:first-of-type{
+        margin-top: 0;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-paragraphs{
+        margin-top: 0;
+        padding: 0 3px;
+        text-align: justify;
+        color: rgb(85, 85, 85);
+    }
+    .chili-container .chili-container-inner .chili-comment-container textarea{
+        min-height: 80px;
+        margin: 8px 0;
+    }
+    .chili-container .chili-container-inner .chili-comment-container .comment-button{
+        height:30px;
+    }
+    /*konec cssja za posamezen čili*/
 }
 /*css za naprave, ki so večje od 481px ter manjše od 779px*/
 @media screen and (min-width: 481px) and (max-width: 779px){
@@ -438,8 +637,32 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
         width: 50%;
         height: 260px;
     }
+    .chilis-container .chilis-title{
+        position: relative;
+    }
     .chilis-container .chilis-title h2{
         text-transform: uppercase;
+        font-size: 22px;
+    }
+    .chilis-container .chilis-title a{
+        display: inline-block;
+        line-height: 29px;
+        position: absolute;
+        top: 2px;
+        left: 10px;
+        right: auto;
+        text-decoration: none;
+        color: rgb(226, 35, 35);
+        font-size: 16px;
+    }
+    .chilis-container .chilis-title a:hover{
+        color: black;
+        transition: color 0.4s;
+    }
+    .chilis-container .chilis-title a .add-new{
+        text-transform: uppercase;
+        font-weight: 700;
+        display: inline-block;
     }
     .chilis-container .chili-list a img{
         width: 100%;
@@ -454,6 +677,64 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
         margin: 0;
     }
     /*konec cssja za seznam čilijev*/
+
+    /*začetek cssja za posamezen čili*/
+    .chili-container .chili-container-inner{
+        width: 65%;
+        margin: 25px auto;
+
+    }
+    .chili-container .chili-container-inner .chili-image{
+        width: 100%;
+        height: 300px;
+    }
+    .chili-container .chili-container-inner .chili-image img{
+        width: 100%;
+        object-fit: cover;
+        height: 300px;
+        border-radius: 4px;
+    }
+    .chili-container .chili-container-inner .chili-details {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-headings{
+        margin: 20px 0 0 0;
+        color: rgb(226, 35, 35);
+    }
+    .chili-container .chili-container-inner .chili-details .chili-paragraphs{
+        margin-top: 0;
+        padding: 0 3px;
+        text-align: justify;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-paragraphs:last-of-type{
+        margin: 0;
+    }
+    .chili-container .chili-container-inner .chili-hr:nth-of-type(2),
+    .chili-container .chili-container-inner .chili-hr:nth-of-type(3){
+        margin: 15px 0;
+        width: 100%;
+        height: 2px;
+        background: rgb(108, 108, 108);
+    }
+    .chili-container .chili-container-inner .chili-comment-container form{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .chili-container .chili-container-inner .chili-comment-container label{
+        font-weight: 700;
+    }
+    .chili-container .chili-container-inner .chili-comment-container textarea{
+        min-height: 100px;
+        margin: 10px 0;
+    }
+    .chili-container .chili-container-inner .chili-comment-container .comment-button{
+        height: 30px;
+    }
+    .chili-container .chili-container-inner .chili-comments .user-comment{
+        width: 100%;
+    }
+    /*konec cssja za posamezen čili*/
 
 }
 /*css za naprave, ki so večje od 780px ter manjše od 960px*/
@@ -621,18 +902,59 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     .chilis-container .chilis-title h2{
         text-transform: uppercase;
     }
+    .chilis-container .chilis-title{
+        position: relative;
+    }
     .chilis-container .chili-list{
         float: left;
         width: 33.33%;
         height: 280px;
+        overflow: hidden;
+    }
+    .chilis-container .chilis-title a{
+        display: inline-block;
+        line-height: 29px;
+        position: absolute;
+        top: 2px;
+        left: 20px;
+        right: auto;
+        text-decoration: none;
+        color: rgb(226, 35, 35);
+        font-size: 18px;
+    }
+    .chilis-container .chilis-title a:hover{
+        color: black;
+        transition: color 0.4s;
+    }
+    .chilis-container .chilis-title a .add-new{
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 700;
     }
     .chilis-container .chili-list a img{
         height: 280px;
     }
     .chilis-container .chili-list a .chili-list-title{
-        display: none;
+        transform: translateY(-280px);
+        transition: transform 0.5s ease;
+        display: inline-block;
+        position: absolute;
+        font-size: 17px;
+        text-align: center;
+        line-height: 280px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: rgba(0, 0, 0, 0.6);
     }
     .chilis-container .chili-list a:hover .chili-list-title{
+        transform: translateY(0px);
         display: inline-block;
         position: absolute;
         font-size: 17px;
@@ -650,6 +972,65 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
         background: rgba(0, 0, 0, 0.6);
     }
     /*konec cssja za seznam čilijev*/
+
+    /*začetek cssja za posamezen čili*/
+    .chili-container .chili-container-inner{
+        width: 65%;
+        margin: 25px auto;
+
+    }
+    .chili-container .chili-container-inner .chili-image{
+        width: 100%;
+        height: 300px;
+    }
+    .chili-container .chili-container-inner .chili-image img{
+        width: 100%;
+        object-fit: cover;
+        height: 300px;
+        border-radius: 4px;
+    }
+    .chili-container .chili-container-inner .chili-details {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-headings{
+        margin: 20px 0 0 0;
+        color: rgb(226, 35, 35);
+    }
+    .chili-container .chili-container-inner .chili-details .chili-paragraphs{
+        margin-top: 0;
+        padding: 0 3px;
+        text-align: justify;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-paragraphs:last-of-type{
+        margin: 0;
+    }
+    .chili-container .chili-container-inner .chili-hr:nth-of-type(2),
+    .chili-container .chili-container-inner .chili-hr:nth-of-type(3){
+        margin: 15px 0;
+        width: 100%;
+        height: 2px;
+        background: rgb(108, 108, 108);
+    }
+    .chili-container .chili-container-inner .chili-comment-container form{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .chili-container .chili-container-inner .chili-comment-container label{
+        font-weight: 700;
+    }
+    .chili-container .chili-container-inner .chili-comment-container textarea{
+        min-height: 100px;
+        margin: 10px 0;
+    }
+    .chili-container .chili-container-inner .chili-comment-container .comment-button{
+        height: 30px;
+    }
+    .chili-container .chili-container-inner .chili-comments .user-comment{
+        width: 100%;
+    }
+    /*konec cssja za posamezen čili*/
+
 }
 /*css za naprave, ki so večje od 961px ter manjše od 1140px*/
 @media screen and (min-width: 961px) and (max-width: 1140px){
@@ -686,7 +1067,7 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     }
     nav{
         max-height: 82px;
-        border-top: 1px solid rgb(226, 35, 35);
+        border-top: none;
     }
     nav ul {
         max-width: 785px;
@@ -826,14 +1207,56 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
         float: left;
         width: 33.33%;
         height: 280px;
+        overflow: hidden;
+    }
+    .chilis-container .chilis-title{
+        position: relative;
+    }
+    .chilis-container .chilis-title a{
+        display: inline-block;
+        line-height: 29px;
+        position: absolute;
+        top: 2px;
+        left: 15px;
+        right: auto;
+        text-decoration: none;
+        color: rgb(226, 35, 35);
+        font-size: 18px;
+    }
+    .chilis-container .chilis-title a:hover{
+        color: black;
+        transition: color 0.4s;
+    }
+    .chilis-container .chilis-title a .add-new{
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 700;
     }
     .chilis-container .chili-list a img{
         height: 280px;
     }
+
     .chilis-container .chili-list a .chili-list-title{
-        display: none;
+        transform: translateY(-280px);
+        transition: transform 0.5s ease;
+        display: inline-block;
+        position: absolute;
+        font-size: 17px;
+        text-align: center;
+        line-height: 280px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: rgba(0, 0, 0, 0.6);
     }
     .chilis-container .chili-list a:hover .chili-list-title{
+        transform: translateY(0px);
         display: inline-block;
         position: absolute;
         font-size: 17px;
@@ -852,6 +1275,64 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     }
     /*konec cssja za seznam čilijev*/
 
+    /*začetek cssja za posamezen čili*/
+    .chili-container .chili-container-inner{
+        width: 65%;
+        margin: 25px auto;
+
+    }
+    .chili-container .chili-container-inner .chili-image{
+        width: 100%;
+        height: 350px;
+    }
+    .chili-container .chili-container-inner .chili-image img{
+        width: 100%;
+        object-fit: cover;
+        height: 350px;
+        border-radius: 4px;
+    }
+    .chili-container .chili-container-inner .chili-details {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-headings{
+        margin: 20px 0 0 0;
+        color: rgb(226, 35, 35);
+    }
+    .chili-container .chili-container-inner .chili-details .chili-paragraphs{
+        margin-top: 0;
+        padding: 0 3px;
+        text-align: justify;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-paragraphs:last-of-type{
+        margin: 0;
+    }
+    .chili-container .chili-container-inner .chili-hr:nth-of-type(2),
+    .chili-container .chili-container-inner .chili-hr:nth-of-type(3){
+        margin: 15px 0;
+        width: 100%;
+        height: 2px;
+        background: rgb(108, 108, 108);
+    }
+    .chili-container .chili-container-inner .chili-comment-container form{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .chili-container .chili-container-inner .chili-comment-container label{
+        font-weight: 700;
+    }
+    .chili-container .chili-container-inner .chili-comment-container textarea{
+        min-height: 100px;
+        margin: 10px 0;
+    }
+    .chili-container .chili-container-inner .chili-comment-container .comment-button{
+        height: 30px;
+    }
+    .chili-container .chili-container-inner .chili-comments .user-comment{
+        width: 100%;
+    }
+    /*konec cssja za posamezen čili*/
+
 }
 
 /*css za naprave, ki so večje od 1141px*/
@@ -865,7 +1346,7 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     }
     header{
         min-height: 82px;
-        border-bottom: 1px solid rgb(226, 35, 35);
+        border-bottom: 2px solid rgb(226, 35, 35);
     }
     header > .clear-fix{
         display: none;
@@ -1013,12 +1494,15 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     }
     .footer-contact ul li a:hover{
         color: black;
-        -webkit-transition: all 0.3s ease;
-        transition: all 0.3s ease;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
     }
     /*konec cssja za domačo stran*/
 
     /*css za registracijo uporabnika*/
+    .register-user{
+        border: none;
+    }
     .register-user h2{
         margin-top: 50px;
     }
@@ -1043,23 +1527,65 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
         margin: 0 auto;
         max-width: 1100px;
     }
+    .chilis-container .chilis-title{
+        position: relative;
+    }
     .chilis-container .chilis-title h2{
         text-transform: uppercase;
         margin: 35px 0 35px 0;
+    }
+    .chilis-container .chilis-title a{
+        display: inline-block;
+        line-height: 29px;
+        position: absolute;
+        top: 1px;
+        left: 5px;
+        right: auto;
+        text-decoration: none;
+        color: rgb(226, 35, 35);
+        font-size: 18px;
+    }
+    .chilis-container .chilis-title a:hover{
+        color: black;
+        transition: color 0.4s;
+    }
+    .chilis-container .chilis-title a .add-new{
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 700;
     }
     .chilis-container .chili-list{
         float: left;
         width: 24%;
         height: 280px;
         margin: 0 5px;
+        overflow: hidden;
+
     }
     .chilis-container .chili-list a img{
         height: 280px;
     }
     .chilis-container .chili-list a .chili-list-title{
-        display: none;
+        transform: translateY(-280px);
+        transition: transform 0.5s ease;
+        display: inline-block;
+        position: absolute;
+        font-size: 17px;
+        text-align: center;
+        line-height: 280px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: rgba(0, 0, 0, 0.6);
     }
     .chilis-container .chili-list a:hover .chili-list-title{
+        transform: translateY(0px);
         display: inline-block;
         position: absolute;
         font-size: 17px;
@@ -1077,4 +1603,67 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
         background: rgba(0, 0, 0, 0.6);
     }
     /*konec cssja za seznam čilijev*/
+
+    /*začetek cssja za posamezen čili*/
+    .chili-container{
+        border-top: 0;
+    }
+    .chili-container .chili-container-inner{
+        width: 65%;
+        max-width: 1000px;
+        margin: 25px auto;
+
+    }
+    .chili-container .chili-container-inner .chili-image{
+        width: 100%;
+        height: 450px;
+    }
+    .chili-container .chili-container-inner .chili-image img{
+        width: 100%;
+        object-fit: cover;
+        height: 450px;
+        border-radius: 4px;
+    }
+    .chili-container .chili-container-inner .chili-details {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-headings{
+        margin: 20px 0 0 0;
+        color: rgb(226, 35, 35);
+    }
+    .chili-container .chili-container-inner .chili-details .chili-paragraphs{
+        margin-top: 0;
+        padding: 0 3px;
+        text-align: justify;
+    }
+    .chili-container .chili-container-inner .chili-details .chili-paragraphs:last-of-type{
+        margin: 0;
+    }
+    .chili-container .chili-container-inner .chili-hr:nth-of-type(2),
+    .chili-container .chili-container-inner .chili-hr:nth-of-type(3){
+        margin: 15px 0;
+        width: 100%;
+        height: 1px;
+        background: rgb(108, 108, 108);
+    }
+    .chili-container .chili-container-inner .chili-comment-container form{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .chili-container .chili-container-inner .chili-comment-container label{
+        font-weight: 700;
+    }
+    .chili-container .chili-container-inner .chili-comment-container textarea{
+        min-height: 150px;
+        margin: 10px 0;
+    }
+    .chili-container .chili-container-inner .chili-comment-container .comment-button{
+        height: 30px;
+        width: 150px;
+    }
+    .chili-container .chili-container-inner .chili-comments .user-comment{
+        width: 100%;
+    }
+    /*konec cssja za posamezen čili*/
 }
