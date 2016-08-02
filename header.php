@@ -30,7 +30,7 @@
                 <li><a href="#"><i class="fa fa-rss fa-custom-list"></i>Blog</a></li>
                 <li><a href="login_user.php"><i class="fa fa-sign-in fa-custom-list"></i>Prijava</a></li>
                 <li><a href="register_user.php"><i class="fa fa-user-plus fa-custom-list"></i>Registracija</a></li>
-                <li><a href="#"><i class="fa fa-sign-out fa-custom-list"></i>Odjava</a></li>
+                <li><a href="logout.php"><i class="fa fa-sign-out fa-custom-list"></i>Odjava</a></li>
                 <div class="clear-fix"></div>
             </ul>
         </nav>
