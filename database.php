@@ -1,17 +1,15 @@
 <?php
-    //določim spremenljivke za povezavo do podatkovne baze
-    $username = "admin";
-    $password = "geslo123";
-    $db_name  = "pikantna lestvica";
-    $server   = "127.0.0.1";
-    //se povežem z podatkovno bazo ter shranim te podatke v spremenljivko
-    $link = mysqli_connect($server, $username, $password, $db_name);
+    //določim spremenljivke, ki so potrebne za povezavo do podatkovne baze
+    $server_name = '127.0.0.1'; //localhost
+    $db_username = 'admin';
+    $db_password = 'geslo123';
+    $db_name     = 'pikantna lestvica';
 
-    mysql_query($link, 'SET NAMES "utf-8"');
-    //funkcija za kodiranje gesla
-    function code_password($pass){
-        $salt = '3k45h#$%#4kyxjhf23';
-        $pass = $salt.$pass;
-        return sha1($pass);
-    }
+    //mysqli mysqli_connect (string $host, string $username,
+    //string $passwd, string $dbname, int $port, string $socket)
+    //povezati se moram v vrstnem redu, ki je določen zgoraj
+    $link = mysqli_connect($server_name, $db_username, $db_password, $db_name) or die(mysqli_error());
+    //popravek zaradi napake v mysqli-php-utf8
+    mysqli_query($link, 'SET NAMES "utf8"');
+
 ?>

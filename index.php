@@ -1,6 +1,5 @@
 <?php
-    
-    include_once "./header.php";
+    include_once './header.php';
 ?>
 <!--Vsebina domače strani-->
 <div class="site-wrapper">
@@ -39,5 +38,5 @@
 </div>
 <!--Konec vsebine za domačo stran-->
 <?php
-    include_once "./footer.php";
+    include_once './footer.php';
 ?>

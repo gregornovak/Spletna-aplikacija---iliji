@@ -1,10 +1,15 @@
 <?php
+    //vključim sejo, da preverim če je uporabnik vpisan
+    include_once './session.php';
     include_once './header.php';
+    if (isset($_SESSION['user_id'])){
+        header("Location: index.php");
+    }
 ?>
 
 <div class="register-user">
     <h2>Prijava uporabnika</h2>
-    <form action="login_check.php" method="POST" autocomplete="off">
+    <form action="login_check.php" method="POST">
         <ul class="register-form">
             <li>
                 <label for="email">E-naslov:</label>
@@ -20,7 +25,6 @@
         </ul>
     </form>
 </div>
-
 <?php
     include_once './footer.php';
 ?>

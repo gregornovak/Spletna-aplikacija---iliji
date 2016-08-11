@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
 html {
     position: relative;
@@ -138,6 +139,7 @@ footer {
     position: absolute;
     left: 0;
     bottom: 0;
+    background: -webkit-linear-gradient(45deg, rgb(226, 35, 35), rgb(162, 77, 214));
     background: linear-gradient(45deg, rgb(226, 35, 35), rgb(162, 77, 214));
     height: 150px;
     width: 100%;
@@ -151,6 +153,7 @@ footer {
     margin: 0;
     padding: 0;
     text-align: center;
+    position: relative;
 }
 .footer-contact ul li {
     list-style: none;
@@ -164,7 +167,19 @@ footer {
 }
 .footer-contact ul li a:active{
     color: black;
+    -webkit-transition: color 0.4s ease;
     transition: color 0.4s ease;
+}
+.footer-contact ul span{
+    position: absolute;
+    display: inline-block;
+    bottom: 5px;
+    left: 0px;
+    width: 150px;
+    line-height: initial;
+    font-size: 14px;
+    color: white;
+    font-style: italic;
 }
 /*konec cssja za domačo index.php stran*/
 
@@ -193,13 +208,39 @@ form .register-form li input{
     border: 1px solid rgb(226, 35, 35);
     border-radius: 3px;
 }
-form .register-form li input:focus, input:active{
+form .register-form li textarea{
+    display: block;
+    width: 95%;
+    max-width: 95%;
+    height: 110px;
+    margin: 3px auto 0 auto;
+    padding: 6px 8px;
+    border: 1px solid rgb(226, 35, 35);
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    transition: none;
+}
+form .register-form li select{
+    display: block;
+    width: 95%;
+    margin: 3px auto 0 auto;
+    padding: 6px 8px;
+    border: 1px solid rgb(226, 35, 35);
+    border-radius: 3px;
     outline-color: rgb(5, 23, 255);
+}
+form .register-form li select option{
+    width:95%;
+}
+form .register-form li input:focus, input:active, input:hover{
+    outline-color: rgb(5, 23, 255);
+    background: rgb(240, 240, 240);
 }
 form .register-form li .register-btn{
     cursor: pointer;
     margin: 10px auto 30px auto;
     padding: 15px 0;
+    background: -webkit-linear-gradient(45deg, rgb(236, 77, 77), rgb(226, 35, 35), rgb(236, 77, 77));
     background: linear-gradient(45deg, rgb(236, 77, 77), rgb(226, 35, 35), rgb(236, 77, 77));
     color: white;
     text-transform: uppercase;
@@ -236,6 +277,7 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
 }
 .chilis-container .chilis-title a:hover{
     color: black;
+    -webkit-transition: color 0.4s;
     transition: color 0.4s;
 }
 .chilis-container .chilis-title a .add-new{
@@ -255,7 +297,8 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
 .chilis-container .chili-list a img{
     width: 100%;
     height: 205px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 .chilis-container .chili-list a .chili-list-title{
     display: inline-block;
@@ -268,6 +311,53 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     font-weight: 700;
     text-transform: uppercase;
     background: rgba(0, 0, 0, 0.6);
+}
+.chilis-container .sort{
+    width: 95%;
+    margin: 0 auto;
+
+}
+.chilis-container .sort .sort-name{
+    text-align: center;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+.chilis-container .sort .sort-desc{
+    margin-top: 5px;
+    text-align: justify;
+    color: rgb(87, 85, 85);
+}
+.chilis-container .chili-hr{
+    border: 0;
+    height: 5px;
+    width: 30px;
+    background: rgb(226, 35, 35);
+    margin: 25px auto 25px auto;
+}
+.chilis-container .blog-posts{
+    width: 100%;
+}
+.chilis-container .blog-posts .post{
+    width: 100%;
+    text-align: center;
+}
+.chilis-container .blog-posts .post a{
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-decoration: none;
+    display: block;
+    color: rgb(60, 60, 60);
+    font-weight: 700;
+
+}
+.chilis-container .blog-posts .post a:hover, a:active, a:focus{
+    color: rgb(175, 174, 174);
+}
+.chilis-container .blog-posts .post a .blog-info{
+    display: block;
+    font-style: italic;
+    font-weight: 400;
 }
 /*konec cssja za seznam čilijev*/
 
@@ -303,8 +393,10 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
 }
 .chili-container .chili-container-inner .chili-image img{
     width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     height: 250px;
+    box-shadow: 0 20px 40px -20px rgb(154, 154, 154);
 }
 .chili-container .chili-container-inner .chili-details {
     width: 90%;
@@ -318,6 +410,16 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     margin-top: 0;
     padding: 0 3px;
     text-align: justify;
+}
+.chili-container .chili-container-inner .chili-details .chili-change .chili-paragraphs:nth-of-type(1){
+    margin-bottom: 0;
+}
+.chili-container .chili-container-inner .chili-details .chili-change .chili-paragraphs a{
+    text-decoration: none;
+    color: black;
+}
+.chili-container .chili-container-inner .chili-details .chili-change .chili-paragraphs a:hover{
+    color: rgb(139, 139, 139);
 }
 .chili-container .chili-container-inner .chili-hr:nth-of-type(2),
 .chili-container .chili-container-inner .chili-hr:nth-of-type(3){
@@ -344,10 +446,15 @@ form .register-form li .register-btn:hover, .register-btn:active, .register-btn:
     margin: 6px 0;
     border: 1px solid rgb(226, 35, 35);
     border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    -webkit-transition: none;
+    transition: none;
 }
 textarea:focus, textarea:active, textarea:hover{
     outline-color: rgb(5, 23, 255);
     background: rgb(240, 240, 240);
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 .chili-container .chili-container-inner .chili-comment-container .comment-button{
@@ -366,6 +473,7 @@ textarea:focus, textarea:active, textarea:hover{
     background: white;
     color: rgb(226, 35, 35);
     outline: none;
+    -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
 .chili-container .chili-container-inner .chili-comments{
@@ -428,6 +536,15 @@ textarea:focus, textarea:active, textarea:hover{
     form .register-form li input{
     padding: 9px 11px;
     }
+    form .register-form li textarea{
+        display: block;
+        width: 95%;
+        max-width: 95%;
+        margin: 3px auto 0 auto;
+        padding: 6px 8px;
+        border: 1px solid rgb(226, 35, 35);
+        border-radius: 3px;
+    }
     /*konec cssja za registracijo uporabnika*/
 
     /*začetek cssja za seznam čilijev*/
@@ -453,6 +570,7 @@ textarea:focus, textarea:active, textarea:hover{
     }
     .chilis-container .chilis-title a:hover{
         color: black;
+        -webkit-transition: color 0.4s;
         transition: color 0.4s;
     }
     .chilis-container .chilis-title a .add-new{
@@ -629,6 +747,16 @@ textarea:focus, textarea:active, textarea:hover{
     form .register-form li input{
         max-width: 550px;
     }
+    form .register-form li textarea{
+        max-width: 550px;
+        height: 130px;
+    }
+    form .register-form li select{
+        max-width: 550px;
+    }
+    form .register-form li select option{
+        width:95%;
+    }
     /*konec css za registracijo uporabnika*/
 
     /*začetek cssja za seznam čilijev*/
@@ -657,6 +785,7 @@ textarea:focus, textarea:active, textarea:hover{
     }
     .chilis-container .chilis-title a:hover{
         color: black;
+        -webkit-transition: color 0.4s;
         transition: color 0.4s;
     }
     .chilis-container .chilis-title a .add-new{
@@ -667,7 +796,8 @@ textarea:focus, textarea:active, textarea:hover{
     .chilis-container .chili-list a img{
         width: 100%;
         height: 260px;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
     .chilis-container .chili-list a .chili-list-title{
         width: 100%;
@@ -675,6 +805,31 @@ textarea:focus, textarea:active, textarea:hover{
         padding: 10px 10px;
         font-size: 17px;
         margin: 0;
+    }
+    .chilis-container .blog-posts{
+        width: 100%;
+    }
+    .chilis-container .blog-posts .post{
+        width: 100%;
+        text-align: center;
+    }
+    .chilis-container .blog-posts .post a{
+        width: 95%;
+        margin: 0 auto;
+        padding: 10px 0;
+        text-decoration: none;
+        display: block;
+        color: rgb(60, 60, 60);
+        font-weight: 700;
+
+    }
+    .chilis-container .blog-posts .post a:hover, a:active, a:focus{
+        color: rgb(175, 174, 174);
+    }
+    .chilis-container .blog-posts .post a .blog-info{
+        display: block;
+        font-style: italic;
+        font-weight: 400;
     }
     /*konec cssja za seznam čilijev*/
 
@@ -690,7 +845,8 @@ textarea:focus, textarea:active, textarea:hover{
     }
     .chili-container .chili-container-inner .chili-image img{
         width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         height: 300px;
         border-radius: 4px;
     }
@@ -773,6 +929,7 @@ textarea:focus, textarea:active, textarea:hover{
     nav{
         max-height: 50px;
         border-top: none;
+        text-align: center;
     }
     nav ul {
         max-width: 745px;
@@ -869,9 +1026,13 @@ textarea:focus, textarea:active, textarea:hover{
         width: 100%;
     }
     .footer-contact{
+        height: 200px;
         max-width: 200px;
         margin: 0 auto;
         line-height: 200px;
+    }
+    .footer-contact ul li {
+        height: 200px;
     }
     .footer-contact ul li+li{
         margin-left: 20px;
@@ -880,6 +1041,12 @@ textarea:focus, textarea:active, textarea:hover{
         color: black;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
+    }
+    .footer-contact ul span{
+        bottom: 10px;
+        left: 0px;
+        width: 200px;
+        font-size: 16px;
     }
     /*konec cssja za domačo index.php stran*/
 
@@ -895,6 +1062,18 @@ textarea:focus, textarea:active, textarea:hover{
     form .register-form li input{
         margin: 0;
         width: 600px;
+    }
+    form .register-form li textarea{
+        width: 600px;
+        max-width: 600px;
+    }
+    form .register-form li select{
+        width: 600px;
+        max-width: 600px;
+    }
+    form .register-form li select option{
+        width: 600px;
+        max-width: 600px;
     }
     /*konec css za registracijo uporabnika*/
 
@@ -924,6 +1103,7 @@ textarea:focus, textarea:active, textarea:hover{
     }
     .chilis-container .chilis-title a:hover{
         color: black;
+        -webkit-transition: color 0.4s;
         transition: color 0.4s;
     }
     .chilis-container .chilis-title a .add-new{
@@ -935,8 +1115,12 @@ textarea:focus, textarea:active, textarea:hover{
         height: 280px;
     }
     .chilis-container .chili-list a .chili-list-title{
-        transform: translateY(-280px);
+        -webkit-transform: translateY(-280px);
+                transform: translateY(-280px);
+        -webkit-transition: -webkit-transform 0.5s ease;
+        transition: -webkit-transform 0.5s ease;
         transition: transform 0.5s ease;
+        transition: transform 0.5s ease, -webkit-transform 0.5s ease;
         display: inline-block;
         position: absolute;
         font-size: 17px;
@@ -954,7 +1138,8 @@ textarea:focus, textarea:active, textarea:hover{
         background: rgba(0, 0, 0, 0.6);
     }
     .chilis-container .chili-list a:hover .chili-list-title{
-        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
         display: inline-block;
         position: absolute;
         font-size: 17px;
@@ -971,6 +1156,10 @@ textarea:focus, textarea:active, textarea:hover{
         text-transform: uppercase;
         background: rgba(0, 0, 0, 0.6);
     }
+    .chilis-container .blog-posts .post a{
+        font-size: 18px;
+
+    }
     /*konec cssja za seznam čilijev*/
 
     /*začetek cssja za posamezen čili*/
@@ -985,7 +1174,8 @@ textarea:focus, textarea:active, textarea:hover{
     }
     .chili-container .chili-container-inner .chili-image img{
         width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         height: 300px;
         border-radius: 4px;
     }
@@ -1068,6 +1258,7 @@ textarea:focus, textarea:active, textarea:hover{
     nav{
         max-height: 82px;
         border-top: none;
+        text-align: center;
     }
     nav ul {
         max-width: 785px;
@@ -1163,9 +1354,13 @@ textarea:focus, textarea:active, textarea:hover{
         width: 100%;
     }
     .footer-contact{
+        height: 200px;
         max-width: 250px;
         margin: 0 auto;
         line-height: 200px;
+    }
+    .footer-contact ul li {
+        height: 200px;
     }
     .footer-contact ul li+li{
         margin-left: 25px;
@@ -1177,6 +1372,12 @@ textarea:focus, textarea:active, textarea:hover{
         color: black;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
+    }
+    .footer-contact ul span{
+        bottom: 10px;
+        left: 0px;
+        width: 250px;
+        font-size: 16px;
     }
     /*konec cssja za domačo index.php stran*/
 
@@ -1196,6 +1397,23 @@ textarea:focus, textarea:active, textarea:hover{
         margin: 0;
         width: 600px;
         padding: 10px 25px;
+    }
+    form .register-form li textarea{
+        font-size: 17px;
+        margin: 0;
+        width: 600px;
+        max-width: 600px;
+        padding: 10px 25px;
+    }
+    form .register-form li select{
+        font-size: 17px;
+        margin: 0;
+        width: 600px;
+        padding: 10px 25px;
+    }
+    form .register-form li select option{
+        width: 600px;
+        max-width: 600px;
     }
     /*konec css za registracijo uporabnika*/
 
@@ -1225,6 +1443,7 @@ textarea:focus, textarea:active, textarea:hover{
     }
     .chilis-container .chilis-title a:hover{
         color: black;
+        -webkit-transition: color 0.4s;
         transition: color 0.4s;
     }
     .chilis-container .chilis-title a .add-new{
@@ -1237,8 +1456,12 @@ textarea:focus, textarea:active, textarea:hover{
     }
 
     .chilis-container .chili-list a .chili-list-title{
-        transform: translateY(-280px);
+        -webkit-transform: translateY(-280px);
+                transform: translateY(-280px);
+        -webkit-transition: -webkit-transform 0.5s ease;
+        transition: -webkit-transform 0.5s ease;
         transition: transform 0.5s ease;
+        transition: transform 0.5s ease, -webkit-transform 0.5s ease;
         display: inline-block;
         position: absolute;
         font-size: 17px;
@@ -1256,7 +1479,8 @@ textarea:focus, textarea:active, textarea:hover{
         background: rgba(0, 0, 0, 0.6);
     }
     .chilis-container .chili-list a:hover .chili-list-title{
-        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
         display: inline-block;
         position: absolute;
         font-size: 17px;
@@ -1273,6 +1497,10 @@ textarea:focus, textarea:active, textarea:hover{
         text-transform: uppercase;
         background: rgba(0, 0, 0, 0.6);
     }
+    .chilis-container .blog-posts .post a{
+        font-size: 18px;
+
+    }
     /*konec cssja za seznam čilijev*/
 
     /*začetek cssja za posamezen čili*/
@@ -1287,7 +1515,8 @@ textarea:focus, textarea:active, textarea:hover{
     }
     .chili-container .chili-container-inner .chili-image img{
         width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         height: 350px;
         border-radius: 4px;
     }
@@ -1472,16 +1701,19 @@ textarea:focus, textarea:active, textarea:hover{
         width: 100%;
     }
     .footer-contact{
+        height: 200px;
         max-width: 250px;
         margin: 0 auto;
         line-height: 200px;
     }
     .footer-contact ul{
+        height: 200px;
         margin: 0;
         padding: 0;
         text-align: center;
     }
     .footer-contact ul li{
+        height: 200px;
         list-style: none;
         display: inline-block;
     }
@@ -1496,6 +1728,14 @@ textarea:focus, textarea:active, textarea:hover{
         color: black;
         -webkit-transition: all 0.4s ease;
         transition: all 0.4s ease;
+    }
+    .footer-contact ul span{
+        bottom: 10px;
+        left: 0px;
+        width: 250px;
+        line-height: initial;
+        font-size: 16px;
+        color: white;
     }
     /*konec cssja za domačo stran*/
 
@@ -1518,6 +1758,24 @@ textarea:focus, textarea:active, textarea:hover{
         margin: 0;
         width: 600px;
         padding: 10px 25px;
+    }
+    form .register-form li textarea{
+        font-size: 17px;
+        margin: 0;
+        height: 150px;
+        width: 600px;
+        max-width: 600px;
+        padding: 10px 25px;
+    }
+    form .register-form li select{
+        font-size: 17px;
+        margin: 0;
+        width: 600px;
+        padding: 10px 25px;
+    }
+    form .register-form li select option{
+        width: 600px;
+        max-width: 600px;
     }
     /*konec css za registracijo uporabnika*/
 
@@ -1547,6 +1805,7 @@ textarea:focus, textarea:active, textarea:hover{
     }
     .chilis-container .chilis-title a:hover{
         color: black;
+        -webkit-transition: color 0.4s;
         transition: color 0.4s;
     }
     .chilis-container .chilis-title a .add-new{
@@ -1558,7 +1817,7 @@ textarea:focus, textarea:active, textarea:hover{
         float: left;
         width: 24%;
         height: 280px;
-        margin: 0 5px;
+        margin: 0 5px 10px 5px;
         overflow: hidden;
 
     }
@@ -1566,8 +1825,12 @@ textarea:focus, textarea:active, textarea:hover{
         height: 280px;
     }
     .chilis-container .chili-list a .chili-list-title{
-        transform: translateY(-280px);
+        -webkit-transform: translateY(-280px);
+                transform: translateY(-280px);
+        -webkit-transition: -webkit-transform 0.5s ease;
+        transition: -webkit-transform 0.5s ease;
         transition: transform 0.5s ease;
+        transition: transform 0.5s ease, -webkit-transform 0.5s ease;
         display: inline-block;
         position: absolute;
         font-size: 17px;
@@ -1585,7 +1848,8 @@ textarea:focus, textarea:active, textarea:hover{
         background: rgba(0, 0, 0, 0.6);
     }
     .chilis-container .chili-list a:hover .chili-list-title{
-        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
         display: inline-block;
         position: absolute;
         font-size: 17px;
@@ -1601,6 +1865,10 @@ textarea:focus, textarea:active, textarea:hover{
         font-weight: 700;
         text-transform: uppercase;
         background: rgba(0, 0, 0, 0.6);
+    }
+    .chilis-container .blog-posts .post a{
+        font-size: 18px;
+
     }
     /*konec cssja za seznam čilijev*/
 
@@ -1620,7 +1888,8 @@ textarea:focus, textarea:active, textarea:hover{
     }
     .chili-container .chili-container-inner .chili-image img{
         width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         height: 450px;
         border-radius: 4px;
     }
@@ -1642,10 +1911,10 @@ textarea:focus, textarea:active, textarea:hover{
     }
     .chili-container .chili-container-inner .chili-hr:nth-of-type(2),
     .chili-container .chili-container-inner .chili-hr:nth-of-type(3){
-        margin: 15px 0;
+        margin: 30px 0;
         width: 100%;
         height: 1px;
-        background: rgb(108, 108, 108);
+        background: rgb(226, 35, 35);
     }
     .chili-container .chili-container-inner .chili-comment-container form{
         width: 100%;

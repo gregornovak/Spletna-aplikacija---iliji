@@ -6,6 +6,7 @@
                 <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
                 <li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                <span>Izdelal: Gregor Novak</span>
             </ul>
         </div>
     </footer>

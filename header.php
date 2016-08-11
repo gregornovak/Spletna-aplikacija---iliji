@@ -1,3 +1,7 @@
+<?php
+    //začnem sejo, da omejim dostop uporabnikom, ki niso prijavljeni
+    include_once './session.php';
+?>
 <!DOCTYPE html>
 <html lang="sl">
 <head>
@@ -26,11 +30,21 @@
         <nav>
             <ul>
                 <li><a href="chili_list.php"><i class="fa fa-list fa-custom-list"></i>Seznam čilijev</a></li>
-                <li><a href="#"><i class="fa fa-list fa-custom-list"></i>Vrste čilijev</a></li>
-                <li><a href="#"><i class="fa fa-rss fa-custom-list"></i>Blog</a></li>
+                <li><a href="chili_sorts.php"><i class="fa fa-list fa-custom-list"></i>Vrste čilijev</a></li>
+                <li><a href="blog.php"><i class="fa fa-rss fa-custom-list"></i>Blog</a></li>
+                <?php
+                    if(isset($_SESSION['user_id'])){
+                ?>
+                <li><a href="profile.php"><i class="fa fa-user fa-custom-list"></i><?php echo $_SESSION['username'];?></a></li>
+                <li><a href="logout.php"><i class="fa fa-sign-out fa-custom-list"></i>Odjava</a></li>
+                <?php
+                    } else {
+                ?>
                 <li><a href="login_user.php"><i class="fa fa-sign-in fa-custom-list"></i>Prijava</a></li>
                 <li><a href="register_user.php"><i class="fa fa-user-plus fa-custom-list"></i>Registracija</a></li>
-                <li><a href="logout.php"><i class="fa fa-sign-out fa-custom-list"></i>Odjava</a></li>
+                <?php
+                    }
+                ?>
                 <div class="clear-fix"></div>
             </ul>
         </nav>
