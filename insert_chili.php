@@ -25,42 +25,51 @@
         if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
-                echo "Datoteka je slika - " . $check["mime"] . ".";
                 $uploadOk = 1;
             } else {
-                echo "Datoteka ni slika.";
+                $_SESSION['errors'] = array("Datoteka ni slika!");
                 $uploadOk = 0;
+                header("Location: add_chili.php");
+                die();
             }
-        }
-        //preverim če ta datoteka(slika) že obstaja
-        if (file_exists($target_file)) {
-            echo "Ta slika že obstaja.";
-            $uploadOk = 0;
         }
         //preverim velikost slike, da ni prevelika
         if ($_FILES["fileToUpload"]["size"] > 5000000) {
-            echo "Vaša slika je prevelika.";
+            $_SESSION['errors'] = array("Slika je prevelika!");
             $uploadOk = 0;
+            header("Location: add_chili.php");
+            die();
         }
         //preverjam ali so slike dovoljenih formatov
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif" ) {
-            echo "Samo JPG, JPEG, PNG & GIF končnice so dovoljene.";
+            $_SESSION['errors'] = array("Samo JPG, JPEG, PNG & GIF končnice so dovoljene.");
             $uploadOk = 0;
+            header("Location: add_chili.php");
+            die();
         }
         //če je $uploadOk nastavljen na 0 zaradi kakšne napake
         if ($uploadOk == 0) {
-            echo "Vaša slika ni bila naložena.";
+            $_SESSION['errors'] = array("Vaša slika ni bila naložena.");
+            header("Location: add_chili.php");
+            die();
         //če ni nobene napake, zapišem podatke v bazo
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 $query = "INSERT INTO chillis(chili_name, chili_scoville, chili_description, chili_picture_url, id_users, id_sorts) VALUES('$chili_name', '$chili_scoville', '$chili_descr', '$target_file', '$user_id', '$chili_sort_id')";
                 mysqli_query($link, $query);
                 header("Location: chili_list.php");
+                die();
 
             } else {
-                echo "Se opravičujemo, prišlo je do napake.";
+                $_SESSION['errors'] = array("Prišlo je do napake.");
+                header("Location: add_chili.php");
+                die();
             }
         }
+    } else {
+        $_SESSION['errors'] = array("Niste vpisali vseh podatkov!");
+        header("Location: add_chili.php");
+        die();
     }
 ?>

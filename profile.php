@@ -14,11 +14,11 @@
         <ul class="register-form">
             <li>
                 <label for="pass1">Trenutno geslo:</label>
-                <input type="password" name="pass1" required="required">
+                <input type="password" name="old_password" required="required">
             </li>
             <li>
                 <label for="pass2">Novo geslo:</label>
-                <input type="password" name="pass2" required="required">
+                <input type="password" name="pass1" required="required">
             </li>
             <li>
                 <label for="pass2">Ponovi geslo:</label>
@@ -27,6 +27,13 @@
             <li>
                 <input type="submit" value="Spremeni geslo" name="submit" class="register-btn">
             </li>
+            <?php if (isset($_SESSION['errors'])) {?>
+                <div>
+                    <?php foreach ($_SESSION['errors'] as $error) {?>
+                        <p><?php echo $error; ?></p>
+                    <?php }  ?>
+                </div>
+            <?php } unset($_SESSION['errors']);?>
         </ul>
     </form>
 </div>

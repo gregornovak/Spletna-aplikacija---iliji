@@ -20,6 +20,13 @@
             <li>
                 <input type="submit" value="Dodaj" name="submit" class="register-btn">
             </li>
+            <?php if(isset($_SESSION['errors'])) { ?>
+                <div class="error-container">
+                    <?php foreach($_SESSION['errors'] as $error) { ?>
+                        <p class="error-text"><?php echo $error; ?></p>
+                    <?php } ?>
+                </div>
+            <?php } unset($_SESSION['errors']); ?>
         </ul>
     </form>
 </div>

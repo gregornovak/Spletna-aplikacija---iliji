@@ -15,8 +15,11 @@
         $query = "INSERT INTO sorts(sort_name,sort_description) VALUES('$chili_sort', '$sort_desc')";
         mysqli_query($link, $query);
         header("Location: chili_sorts.php");
+        die();
     } else {
+        $_SESSION['errors'] = array("Niste vpisali vseh podatkov!");
         header("Location: add_sort.php");
         die();
     }
+    mysqli_close($link);
 ?>

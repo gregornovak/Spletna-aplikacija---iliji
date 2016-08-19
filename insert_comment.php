@@ -18,5 +18,10 @@
         mysqli_query($link, $query);
         header("Location: chili.php?id=$chili_id");
         die();
+    } else {
+        $_SESSION['errors'] = array("Niste vpisali komentarja!");
+        header("Location: chili.php?id=$chili_id");
+        die();
     }
+    mysqli_close($link);
 ?>

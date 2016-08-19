@@ -19,6 +19,10 @@
         $result2 = mysqli_query($link, $query);
         header("Location: blog_post.php?id=$blog_id");
         die();
+    } else {
+        $_SESSION['errors'] = array("Niste vpisali vseh podatkov!");
+        header("Location: add_post.php");
+        die();
     }
 
 

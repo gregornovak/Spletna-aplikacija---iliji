@@ -9,7 +9,7 @@
 
 <div class="register-user">
     <h2>Prijava uporabnika</h2>
-    <form action="login_check.php" method="POST">
+    <form action="login_check.php" method="POST" name="loginUser" onsubmit="return loginValidation()">
         <ul class="register-form">
             <li>
                 <label for="email">E-naslov:</label>
@@ -22,6 +22,13 @@
             <li>
                 <input type="submit" value="Prijava" name="submit" class="register-btn">
             </li>
+            <?php if (isset($_SESSION['errors'])){ ?>
+                <div class="error-container">
+                    <?php foreach ($_SESSION['errors'] as $error) {?>
+                        <p class="error-text"><?php echo $error; ?></p>
+                    <?php } ?>
+                </div>
+            <?php } unset($_SESSION['errors']);?>
         </ul>
     </form>
 </div>

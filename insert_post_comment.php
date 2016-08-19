@@ -18,7 +18,9 @@
         header("Location: blog_post.php?id=$post_id");
         die();
     } else {
+        $_SESSION['errors'] = array("Niste vpisali komentarja!");
         header("Location: blog_post.php?id=$post_id");
         die();
     }
+    mysqli_close($link);
 ?>

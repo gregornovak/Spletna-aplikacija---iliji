@@ -22,7 +22,9 @@
         $result = mysqli_query($link, $query);
         //če nam array vrne rezultat večji od nič pomeni da je bil ta email naslov že uporabljen
         if (mysqli_num_rows($result) != 0) {
-            echo 'Ta elektronski naslov je že bil uporabljen!';
+            $_SESSION['errors'] = array("Ta elektronski naslov je že bil uporabljen!");
+            header("Location: register_user.php");
+            die();
         } else { //preverim ali se gesli ujemata
             if ($pass1 == $pass2) {
                 $pass = md5($pass1); //zakodiram geslo z md5
@@ -32,12 +34,18 @@
                 //connection, query - obvezno, resultmode - opcijsko
                 mysqli_query($link, $query);
                 header("Location: index.php"); die();//preusmerim na domačo stran
+            } else {
+                $_SESSION['errors'] = array("Gesli se ne ujemata!");
+                header("Location: register_user.php");
+                die();
             }
 
         }
 
     } else {
-        echo 'Niste vpisali vseh podatkov!'; die();
+        $_SESSION['errors'] = array("Niste vpisali vseh potrebnih podatkov!");
+        header("Location: register_user.php");
+        die();
     }
     mysqli_close($link);
 ?>

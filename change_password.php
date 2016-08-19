@@ -9,8 +9,8 @@
     //shranim id uporabnika v spremenljivko
     $user_id   = $_SESSION['user_id'];
     //pridobim podatke, ki jih je uporabnik vpisal v profile.php formo
-    $old_pass  = mysqli_real_escape_string($link, $_POST['pass1']);
-    $new_pass1 = mysqli_real_escape_string($link, $_POST['pass2']);
+    $old_pass  = mysqli_real_escape_string($link, $_POST['old_password']);
+    $new_pass1 = mysqli_real_escape_string($link, $_POST['pass1']);
     $new_pass2 = mysqli_real_escape_string($link, $_POST['pass2']);
     //pregledam če so vsi podatki vpisani, ter če se novi gesli ujemata
     if (!empty($old_pass) && !empty($new_pass1) && !empty($new_pass2) && $new_pass1 == $new_pass2) {
@@ -26,17 +26,17 @@
             //posodobim geslo za tega uporabnika
             $query = "UPDATE users SET pass='$new_pass' WHERE id_users='$user_id'";
             mysqli_query($link, $query);
-            mysqli_close($link);
             header("Location: logout.php");
             die();
         } else {
-            mysqli_close($link);
-            header("Location: index.php");
+            $_SESSION['errors'] = array("Staro geslo ni pravilno!");
+            header("Location: profile.php");
             die();
         }
     } else {
-        mysqli_close($link);
-        header("Location: index.php");
+        $_SESSION['errors'] = array("Niste vpisali vseh podatkov / gesli se ne ujemata!");
+        header("Location: profile.php");
         die();
     }
+    mysqli_close($link);
 ?>

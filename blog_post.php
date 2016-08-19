@@ -51,6 +51,13 @@
                 <label for="comment">Komentiraj</label>
                 <textarea name="comment"></textarea>
                 <input class="comment-button" type="submit" value="Pošlji" />
+                <?php if(isset($_SESSION['errors'])) { ?>
+                    <div class="error-container">
+                        <?php foreach($_SESSION['errors'] as $error) { ?>
+                            <p class="error-text"><?php echo $error; ?></p>
+                        <?php } ?>
+                    </div>
+                <?php } unset($_SESSION['errors']); ?>
             </form>
         </div>
         <hr class="chili-hr">

@@ -26,10 +26,13 @@
             header("Location: index.php"); die();
         } else {
             // če ga pa ni našlo, ga pa preusmerim nazaj na login_user.php
-            header("Location: login_user.php"); die();
+            $_SESSION['errors'] = array("Ta uporabnik ne obstaja!");
+            header("Location: login_user.php");
+            die();
         }
     } else {
-        echo 'Niste vpisali vseh podatkov!';
+        $_SESSION['errors'] = array("Niste vpisali vseh podatkov!");
+        header("Location: login_user.php");
         die();
     }
 

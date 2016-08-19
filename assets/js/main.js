@@ -10,4 +10,13 @@ $(document).ready(function() {
     }, 800);
     });
 
+    function loginValidation() {
+        var email = document.forms["loginUser"]["email"].value();
+        var pass  = document.forms["loginUser"]["pass1"].value();
+        return console.log(email + " " + pass);
+        //if ((email == null) || (email == "") || (pass == null) || (pass == "")){
+        //    alert("Niste vpisali vseh podatkov!");
+        //    return false;
+        //}
+    }
 });
