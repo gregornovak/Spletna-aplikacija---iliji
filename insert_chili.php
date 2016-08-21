@@ -57,7 +57,7 @@
         //če ni nobene napake, zapišem podatke v bazo
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                $query = mysqli_real_escape_string($link, "INSERT INTO chillis(chili_name, chili_scoville, chili_description, chili_picture_url, id_users, id_sorts) VALUES('$chili_name', '$chili_scoville', '$chili_descr', '$target_file', '$user_id', '$chili_sort_id')");
+                $query = "INSERT INTO chillis(chili_name, chili_scoville, chili_description, chili_picture_url, id_users, id_sorts) VALUES('$chili_name', '$chili_scoville', '$chili_descr', '$target_file', '$user_id', '$chili_sort_id')";
                 mysqli_query($link, $query);
                 header("Location: chili_list.php");
                 die();

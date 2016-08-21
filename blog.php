@@ -7,7 +7,7 @@
         die();
     }
     $user_id = $_SESSION['user_id'];
-    $query   = mysqli_real_escape_string($link, "SELECT * FROM users WHERE id_users='$user_id' AND admin='1'");
+    $query   = "SELECT * FROM users WHERE id_users='$user_id' AND admin='1'";
     $result  = mysqli_query($link, $query);
 
 ?>
@@ -28,7 +28,7 @@
     <div class="blog-posts">
         <?php
             //poizvedba -> združim tri tabele za izpis
-            $query = mysqli_real_escape_string($link, "SELECT b.id_blog, b.blog_title, b.date_added, u.first_name, u.last_name FROM blog_users bu INNER JOIN users u ON bu.id_users=u.id_users INNER JOIN blog b ON bu.id_blog=b.id_blog ORDER BY date_added DESC");
+            $query = "SELECT b.id_blog, b.blog_title, b.date_added, u.first_name, u.last_name FROM blog_users bu INNER JOIN users u ON bu.id_users=u.id_users INNER JOIN blog b ON bu.id_blog=b.id_blog ORDER BY date_added DESC";
             $result = mysqli_query($link, $query);
             while ($blog = mysqli_fetch_array($result)) {
         ?>

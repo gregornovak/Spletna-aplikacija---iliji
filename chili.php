@@ -14,7 +14,7 @@
     //pridobim id čilija, da ga lahko najdem v bazi
     $chilis_id = (int)$_GET['id'];
     //poizvedba za čili
-    $query = mysqli_real_escape_string($link, "SELECT u.first_name, u.last_name, c.*, s.sort_name FROM chillis c INNER JOIN users u ON c.id_users=u.id_users INNER JOIN sorts s ON c.id_sorts=s.id_sorts WHERE id_chillis='$chilis_id'");
+    $query = "SELECT u.first_name, u.last_name, c.*, s.sort_name FROM chillis c INNER JOIN users u ON c.id_users=u.id_users INNER JOIN sorts s ON c.id_sorts=s.id_sorts WHERE id_chillis='$chilis_id'";
     $result = mysqli_query($link, $query);
     $chili = mysqli_fetch_array($result);
 ?>
@@ -77,7 +77,7 @@
         <div class="chili-comments">
             <?php
                 //poizvedba za komentarje
-                $query = mysqli_real_escape_string($link, "SELECT u.first_name, u.last_name, c.comment, c.date_added FROM comments c INNER JOIN users u ON c.id_users=u.id_users WHERE id_chillis='$chilis_id' ORDER BY c.date_added DESC");
+                $query = "SELECT u.first_name, u.last_name, c.comment, c.date_added FROM comments c INNER JOIN users u ON c.id_users=u.id_users WHERE id_chillis='$chilis_id' ORDER BY c.date_added DESC";
                 $result = mysqli_query($link, $query);
                 //dokler najdeš rezultat -> izpisuj
                 while($comment = mysqli_fetch_array($result)) {

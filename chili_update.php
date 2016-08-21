@@ -14,7 +14,7 @@
     if (!empty($chili_name) && !empty($chili_scoville) && !empty($chili_descr)){
         //kličem funkcijo iz datoteke functions.php
         $chili_scoville = scoville_format($chili_scoville);
-        $query = mysqli_real_escape_string($link, "UPDATE chillis SET chili_name='$chili_name', chili_scoville='$chili_scoville', chili_description='$chili_descr' WHERE id_chillis='$chili_id'");
+        $query = "UPDATE chillis SET chili_name='$chili_name', chili_scoville='$chili_scoville', chili_description='$chili_descr' WHERE id_chillis='$chili_id'";
         mysqli_query($link, $query);
         header("Location: chili.php?id=$chili_id");
         die();

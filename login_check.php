@@ -18,7 +18,7 @@
         //če sta vrednosti vpisani, preverim ali obstaja ta uporabnik
         if (isset($email) && !empty($email) && isset($pass) && !empty($pass)) {
             $email = is_email($email);
-            $query = mysqli_real_escape_string($link, "SELECT * FROM users WHERE email='$email' AND pass='$pass'");
+            $query = "SELECT * FROM users WHERE email='$email' AND pass='$pass'";
             $result = mysqli_query($link, $query);
             //če je našlo uporabnika ga preusmerim na index.php
             if (mysqli_num_rows($result) == 1) {

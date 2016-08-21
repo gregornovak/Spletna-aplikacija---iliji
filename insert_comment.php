@@ -15,7 +15,7 @@
     $comment  = clean_data($_POST['comment']);
     //če id čilija in komentar nista prazna -> zapiši v bazo
     if (!empty($chili_id) && !empty($comment)) {
-        $query = mysqli_real_escape_string($link, "INSERT INTO comments(comment, id_users, id_chillis) VALUES('$comment', '$user_id', '$chili_id')");
+        $query = "INSERT INTO comments(comment, id_users, id_chillis) VALUES('$comment', '$user_id', '$chili_id')";
         mysqli_query($link, $query);
         header("Location: chili.php?id=$chili_id");
         die();

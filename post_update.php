@@ -14,7 +14,7 @@
     if(!empty($_POST['submit'])) {
         //če polja niso prazna posodobi zapis
         if (!empty($post_id) && !empty($title) && !empty($content)) {
-            $query = mysqli_real_escape_string($link, "UPDATE blog SET blog_title='$title', blog_content='$content' WHERE id_blog='$post_id'");
+            $query = "UPDATE blog SET blog_title='$title', blog_content='$content' WHERE id_blog='$post_id'";
             mysqli_query($link, $query);
             header("Location: blog_post.php?id=$post_id");
             die();

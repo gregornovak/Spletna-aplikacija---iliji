@@ -20,13 +20,13 @@
             $old_pass = md5($old_pass);
             $new_pass = md5($new_pass1);
             //preverim če obstaja uporabnik s tem idjem ter geslom
-            $query = mysqli_real_escape_string($link, "SELECT pass FROM users WHERE id_users='$user_id' AND pass='$old_pass'");
+            $query = "SELECT pass FROM users WHERE id_users='$user_id' AND pass='$old_pass'";
             //pošljem poizvedbo, ter jo shranim v spremenljivko $result
             $result = mysqli_query($link, $query);
             //če najde en rezultat pomeni, da obstaja ta uporabnik
             if (mysqli_num_rows($result) == 1) {
                 //posodobim geslo za tega uporabnika
-                $query = mysqli_real_escape_string($link, "UPDATE users SET pass='$new_pass' WHERE id_users='$user_id'");
+                $query = "UPDATE users SET pass='$new_pass' WHERE id_users='$user_id'";
                 mysqli_query($link, $query);
                 header("Location: logout.php");
                 die();

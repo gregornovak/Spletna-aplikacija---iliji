@@ -12,7 +12,7 @@
     $post_id    = (int)$_POST['post_id'];
     $comment    = clean_data($_POST['comment']);
     if (!empty($post_id) && !empty($comment)) {
-        $query = mysqli_real_escape_string($link, "INSERT INTO comments(comment, id_users, id_blog) VALUES('$comment', '$user_id', '$post_id')");
+        $query = "INSERT INTO comments(comment, id_users, id_blog) VALUES('$comment', '$user_id', '$post_id')";
         mysqli_query($link, $query);
         header("Location: blog_post.php?id=$post_id");
         die();

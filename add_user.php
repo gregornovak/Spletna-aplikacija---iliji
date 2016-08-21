@@ -20,7 +20,7 @@
         //najprej preverim ali je email naslov veljaven
         if (is_email($email)) {
             //preverim če že obstajaš račun s tem email naslovom
-            $query = mysqli_real_escape_string($link, "SELECT * FROM users WHERE email = '$email'");
+            $query = "SELECT * FROM users WHERE email = '$email'";
             //pošljem poizvedbo
             $result = mysqli_query($link, $query);
             //če nam array vrne rezultat večji od nič pomeni da je bil ta email naslov že uporabljen
@@ -32,7 +32,7 @@
                 if ($pass1 == $pass2) {
                     $pass = md5($pass1); //zakodiram geslo z md5
                     //vstavim podatke v poizvedbo
-                    $query = mysqli_real_escape_string($link, "INSERT INTO users(first_name, last_name, email, pass) VALUES ('$first_name', '$last_name', '$email', '$pass')");
+                    $query = "INSERT INTO users(first_name, last_name, email, pass) VALUES ('$first_name', '$last_name', '$email', '$pass')";
                     //mysqli_query(connection($link),query($query),resultmode);
                     //connection, query - obvezno, resultmode - opcijsko
                     mysqli_query($link, $query);

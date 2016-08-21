@@ -13,7 +13,7 @@
     //pridobim id objave z get ukazom
     $post_id = (int) $_GET['id'];
     //poizvedba -> združim tri tabele
-    $query = mysqli_real_escape_string($link, "SELECT b.blog_title, b.blog_content, b.date_added, bu.id_users, bu.id_blog, u.first_name, u.last_name FROM blog_users bu INNER JOIN users u ON bu.id_users=u.id_users INNER JOIN blog b ON bu.id_blog=b.id_blog WHERE b.id_blog='$post_id'");
+    $query = "SELECT b.blog_title, b.blog_content, b.date_added, bu.id_users, bu.id_blog, u.first_name, u.last_name FROM blog_users bu INNER JOIN users u ON bu.id_users=u.id_users INNER JOIN blog b ON bu.id_blog=b.id_blog WHERE b.id_blog='$post_id'";
     $result = mysqli_query($link, $query);
     $post = mysqli_fetch_array($result);
 ?>
@@ -64,7 +64,7 @@
         <div class="chili-comments">
         <?php
             //poizvedba za komentarje
-            $query = mysqli_real_escape_string($link, "SELECT u.first_name, u.last_name, c.comment, c.date_added FROM comments c INNER JOIN users u ON c.id_users=u.id_users WHERE id_blog='$post_id' ORDER BY c.date_added DESC");
+            $query = "SELECT u.first_name, u.last_name, c.comment, c.date_added FROM comments c INNER JOIN users u ON c.id_users=u.id_users WHERE id_blog='$post_id' ORDER BY c.date_added DESC";
             $result = mysqli_query($link, $query);
             //dokler najdeš rezultat -> izpisuj
             while($comment = mysqli_fetch_array($result)) {

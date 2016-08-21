@@ -14,7 +14,7 @@
     //pridobim id čilija, da ga lahko najdem v bazi
     $id_chili = (int)$_GET['id'];
     //preverim če obstaja čili v bazi z istim idjem -> izpišem
-    $query = mysqli_real_escape_string($link, "SELECT * FROM chillis WHERE id_chillis='$id_chili'");
+    $query = "SELECT * FROM chillis WHERE id_chillis='$id_chili'";
     $result = mysqli_query($link, $query);
     $chili = mysqli_fetch_array($result);
 ?>

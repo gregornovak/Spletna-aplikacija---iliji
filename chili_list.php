@@ -17,7 +17,7 @@
     </div>
     <?php
         //poizvedba za čilije
-        $query = mysqli_real_escape_string($link, "SELECT * FROM chillis");
+        $query = "SELECT * FROM chillis";
         $result = mysqli_query($link, $query);
         //dokler najdeš rezultat -> izpisuj
         while($chili = mysqli_fetch_array($result)){

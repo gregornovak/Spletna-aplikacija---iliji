@@ -11,7 +11,7 @@
     //pridobim id objave z get ukazom
     $post_id = (int) $_GET['id'];
     //poizvedba
-    $query = mysqli_real_escape_string($link, "SELECT * FROM blog WHERE id_blog='$post_id'");
+    $query = "SELECT * FROM blog WHERE id_blog='$post_id'";
     $result = mysqli_query($link, $query);
     $post = mysqli_fetch_array($result);
 ?>

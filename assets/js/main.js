@@ -10,8 +10,4 @@ $(document).ready(function() {
     }, 800);
     });
 
-    function strLength() {
-        var ime = document.forms.addUser;
-        console.log(ime);
-    }
 });
