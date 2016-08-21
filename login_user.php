@@ -9,7 +9,7 @@
 
 <div class="register-user">
     <h2>Prijava uporabnika</h2>
-    <form action="login_check.php" method="POST" name="loginUser" onsubmit="return loginValidation()">
+    <form action="login_check.php" method="POST" name="loginUser">
         <ul class="register-form">
             <li>
                 <label for="email">E-naslov:</label>

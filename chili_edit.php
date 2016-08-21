@@ -14,7 +14,7 @@
     //pridobim id čilija, da ga lahko najdem v bazi
     $id_chili = (int)$_GET['id'];
     //preverim če obstaja čili v bazi z istim idjem -> izpišem
-    $query = "SELECT * FROM chillis WHERE id_chillis='$id_chili'";
+    $query = mysqli_real_escape_string($link, "SELECT * FROM chillis WHERE id_chillis='$id_chili'");
     $result = mysqli_query($link, $query);
     $chili = mysqli_fetch_array($result);
 ?>
@@ -38,6 +38,13 @@
             <li>
                 <input type="submit" value="Spremeni" name="submit" class="register-btn">
             </li>
+            <?php if (isset($_SESSION['errors'])){ ?>
+                <div class="error-container">
+                    <?php foreach ($_SESSION['errors'] as $error) {?>
+                        <p class="error-text"><?php echo $error; ?></p>
+                    <?php } ?>
+                </div>
+            <?php } unset($_SESSION['errors']);?>
         </ul>
     </form>
 </div>

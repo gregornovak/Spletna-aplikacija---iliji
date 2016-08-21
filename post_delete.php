@@ -8,9 +8,9 @@
     }
     //pridobim id objave z get ukazom
     $post_id = (int) $_GET['id'];
-    $query = "DELETE FROM blog WHERE id_blog='$post_id'";
+    $query = mysqli_real_escape_string($link, "DELETE FROM blog WHERE id_blog='$post_id'");
     mysqli_query($link, $query);
-    mysqli_close($link);
     header("Location: blog.php");
     die();
+    mysqli_close($link);
 ?>

@@ -186,6 +186,8 @@ footer {
 /*css za registracijo uporabnika*/
 .register-user{
     border-top: 1px solid rgb(226, 35, 35);
+    padding-bottom: 15px;
+
 }
 .register-user > h2{
     text-align: center;
@@ -497,6 +499,21 @@ textarea:focus, textarea:active, textarea:hover{
 }
 /*konec cssja za posamezen čili*/
 
+/*css za izpis errorjev*/
+.error-container .error-text {
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid rgb(35, 83, 226);
+    background: rgb(35, 83, 226);;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}
+/*konec cssja za izpis errorjev*/
+
+
 /*css za naprave večje od 321px in manjše od 480px*/
 @media screen and (min-width: 321px) and (max-width: 480px){
 
@@ -619,6 +636,20 @@ textarea:focus, textarea:active, textarea:hover{
         height:30px;
     }
     /*konec cssja za posamezen čili*/
+    /*css za izpis errorjev*/
+    .error-container .error-text {
+        width: 95%;
+        margin: 0 auto;
+        border: 1px solid rgb(35, 83, 226);
+        background: rgb(35, 83, 226);;
+        padding: 5px 10px;
+        border-radius: 3px;
+        text-align: center;
+        color: white;
+        margin-bottom: 15px;
+    }
+    /*konec cssja za izpis errorjev*/
+
 }
 /*css za naprave, ki so večje od 481px ter manjše od 779px*/
 @media screen and (min-width: 481px) and (max-width: 779px){
@@ -891,6 +922,14 @@ textarea:focus, textarea:active, textarea:hover{
         width: 100%;
     }
     /*konec cssja za posamezen čili*/
+    /*css za izpis errorjev*/
+    .error-container .error-text {
+        max-width: 550px;
+        padding: 10px 10px;
+
+    }
+    /*konec cssja za izpis errorjev*/
+
 
 }
 /*css za naprave, ki so večje od 780px ter manjše od 960px*/
@@ -1220,6 +1259,20 @@ textarea:focus, textarea:active, textarea:hover{
         width: 100%;
     }
     /*konec cssja za posamezen čili*/
+    /*css za izpis errorjev*/
+    .error-container .error-text {
+        max-width: 600px;
+        width: 600px;
+        margin: 0 auto;
+        border: 1px solid rgb(35, 83, 226);
+        background: rgb(35, 83, 226);;
+        padding: 10px 10px;
+        border-radius: 5px;
+        text-align: center;
+        color: white;
+        margin-bottom: 15px;
+    }
+    /*konec cssja za izpis errorjev*/
 
 }
 /*css za naprave, ki so večje od 961px ter manjše od 1140px*/
@@ -1562,6 +1615,12 @@ textarea:focus, textarea:active, textarea:hover{
     }
     /*konec cssja za posamezen čili*/
 
+    /*css za izpis errorjev*/
+    .error-container .error-text {
+        max-width: 600px;
+        width: 600px;
+    }
+    /*konec cssja za izpis errorjev*/
 }
 
 /*css za naprave, ki so večje od 1141px*/
@@ -1935,4 +1994,10 @@ textarea:focus, textarea:active, textarea:hover{
         width: 100%;
     }
     /*konec cssja za posamezen čili*/
+    /*css za izpis errorjev*/
+    .error-container .error-text {
+        max-width: 600px;
+        width: 600px;
+    }
+    /*konec cssja za izpis errorjev*/
 }

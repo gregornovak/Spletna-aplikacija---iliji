@@ -23,14 +23,14 @@
             </li>
             <li>
                 <label for="desc">Opis čilija:</label>
-                <textarea name="desc"></textarea>
+                <textarea name="desc" required="required"></textarea>
             </li>
             <li>
                 <label for="sort">Vrsta čilija:</label>
-                <select name="sort">
+                <select name="sort" required="required">
                 <?php
                     //izpišem vrste čilijev, da jih lahko uporabnik izbere
-                    $query = "SELECT * FROM sorts";
+                    $query = mysqli_real_escape_string($link, "SELECT * FROM sorts");
                     $result = mysqli_query($link, $query);
                     while ($sort = mysqli_fetch_array($result)) {
                 ?>

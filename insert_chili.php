@@ -3,20 +3,21 @@
     include_once './session.php';
     //vključim podatkovno bazo, ker bom vpisoval podatke
     include_once './database.php';
-
+    include_once './functions.php';
     if (!isset($_SESSION['user_id'])){
         header("Location: index.php");
         die();
     }
     //sprejmem vse podatke, ki jih je uporabnik vpisal v formo add_chili.php
-    $chili_name     = mysqli_real_escape_string($link, $_POST['name']);
-    $chili_scoville = mysqli_real_escape_string($link, $_POST['scoville']);
-    $chili_descr    = mysqli_real_escape_string($link, $_POST['desc']);
-    $chili_sort_id  = mysqli_real_escape_string($link, $_POST['sort']);
+    $chili_name     = clean_data($_POST['name']);
+    $chili_scoville = clean_data($_POST['scoville']);
+    $chili_descr    = clean_data($_POST['desc']);
+    $chili_sort_id  = clean_data($_POST['sort']);
     $user_id = $_SESSION['user_id']; //da vem kateri uporabnik doda čili
     //če niso polja prazna -> gremo naprej
     if (!empty($chili_name) && !empty($chili_scoville) && !empty($chili_descr) && !empty($chili_sort_id)) {
-
+        //kličem funkcijo iz datoteke functions.php
+        $chili_scoville = scoville_format($chili_scoville);
         $target_dir = "uploads/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
@@ -56,7 +57,7 @@
         //če ni nobene napake, zapišem podatke v bazo
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                $query = "INSERT INTO chillis(chili_name, chili_scoville, chili_description, chili_picture_url, id_users, id_sorts) VALUES('$chili_name', '$chili_scoville', '$chili_descr', '$target_file', '$user_id', '$chili_sort_id')";
+                $query = mysqli_real_escape_string($link, "INSERT INTO chillis(chili_name, chili_scoville, chili_description, chili_picture_url, id_users, id_sorts) VALUES('$chili_name', '$chili_scoville', '$chili_descr', '$target_file', '$user_id', '$chili_sort_id')");
                 mysqli_query($link, $query);
                 header("Location: chili_list.php");
                 die();

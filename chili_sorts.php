@@ -17,7 +17,7 @@
 
     <?php
         //poizvedba, ki vrne vse vrste čilijev
-        $query = "SELECT * FROM sorts";
+        $query = mysqli_real_escape_string($link, "SELECT * FROM sorts");
         $result = mysqli_query($link, $query);
         //dokler najdeš rezultat -> izpisuj
         while($sort = mysqli_fetch_array($result)){

@@ -28,9 +28,9 @@
                 <input type="submit" value="Spremeni geslo" name="submit" class="register-btn">
             </li>
             <?php if (isset($_SESSION['errors'])) {?>
-                <div>
+                <div class="error-container">
                     <?php foreach ($_SESSION['errors'] as $error) {?>
-                        <p><?php echo $error; ?></p>
+                        <p class="error-text"><?php echo $error; ?></p>
                     <?php }  ?>
                 </div>
             <?php } unset($_SESSION['errors']);?>

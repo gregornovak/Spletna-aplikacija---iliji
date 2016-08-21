@@ -11,7 +11,7 @@
     //pridobim id objave z get ukazom
     $post_id = (int) $_GET['id'];
     //poizvedba
-    $query = "SELECT * FROM blog WHERE id_blog='$post_id'";
+    $query = mysqli_real_escape_string($link, "SELECT * FROM blog WHERE id_blog='$post_id'");
     $result = mysqli_query($link, $query);
     $post = mysqli_fetch_array($result);
 ?>
@@ -31,6 +31,13 @@
             <li>
                 <input type="submit" value="Spremeni" name="submit" class="register-btn">
             </li>
+            <?php if (isset($_SESSION['errors'])){ ?>
+                <div class="error-container">
+                    <?php foreach ($_SESSION['errors'] as $error) {?>
+                        <p class="error-text"><?php echo $error; ?></p>
+                    <?php } ?>
+                </div>
+            <?php } unset($_SESSION['errors']);?>
         </ul>
     </form>
 </div>

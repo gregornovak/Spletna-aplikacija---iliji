@@ -8,7 +8,7 @@
 
 <div class="register-user">
     <h2>Registracija uporabnika</h2>
-    <form action="add_user.php" method="POST">
+    <form action="add_user.php" method="POST" name="addUser">
         <ul class="register-form">
             <li>
                 <label for="first_name">Ime:</label>
