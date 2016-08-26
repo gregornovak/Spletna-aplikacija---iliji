@@ -13,10 +13,13 @@
     //Assuming the user entered http://example.com/?name=Hannes
     //pridobim id čilija, da ga lahko najdem v bazi
     $id_chili = (int)$_GET['id'];
+    //pridobim user id iz seje
+    $user_id = $_SESSION['user_id'];
     //preverim če obstaja čili v bazi z istim idjem -> izpišem
     $query = "SELECT * FROM chillis WHERE id_chillis='$id_chili'";
     $result = mysqli_query($link, $query);
     $chili = mysqli_fetch_array($result);
+    if ($user_id === $chili['id_users']) {
 ?>
 <div class="register-user">
     <h2>Uredi čili!</h2>
@@ -48,7 +51,11 @@
         </ul>
     </form>
 </div>
-
 <?php
+    } else {
+        header("Location: chili_list.php");
+        die();
+    }
     include_once './footer.php';
+    mysqli_close($link);
 ?>
