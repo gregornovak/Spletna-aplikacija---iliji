@@ -193,6 +193,9 @@ footer {
     text-align: center;
     color: rgb(226, 35, 35);
 }
+form .register-form .add-err1, .add-err2, .add-err3, .add-err4{
+    color: rgb(226, 35, 35);
+}
 form .register-form{
     padding: 0;
     margin: 0;

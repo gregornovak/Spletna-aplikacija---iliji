@@ -14,10 +14,12 @@
             <li>
                 <label for="email">E-naslov:</label>
                 <input type="email" name="email" required="required">
+                <span class="add-err1"></span>
             </li>
             <li>
                 <label for="pass">Geslo:</label>
                 <input type="password" name="pass1" required="required">
+                <span class="add-err2"></span>
             </li>
             <li>
                 <input type="submit" value="Prijava" name="submit" class="register-btn">

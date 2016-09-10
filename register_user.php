@@ -13,22 +13,27 @@
             <li>
                 <label for="first_name">Ime:</label>
                 <input type="text" name="first_name">
+                <span class="add-err1"></span>
             </li>
             <li>
                 <label for="last_name">Priimek:</label>
                 <input type="text" name="last_name">
+                <span class="add-err2"></span>
             </li>
             <li>
                 <label for="email">E-naslov:</label>
                 <input type="email" name="email" required="required">
+                <span class="add-err3"></span>
             </li>
             <li>
                 <label for="pass">Geslo:</label>
                 <input type="password" name="pass1" required="required">
+                <span class="add-err4"></span>
             </li>
             <li>
                 <label for="pass">Ponovi geslo:</label>
                 <input type="password" name="pass2" required="required">
+                <span class="add-err4"></span>
             </li>
             <li>
                 <input type="submit" value="Registriraj me" name="submit" class="register-btn">
